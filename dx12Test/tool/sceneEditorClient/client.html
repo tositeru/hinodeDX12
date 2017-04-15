@@ -1,0 +1,85 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>websocket client</title>
+    <script src="./js/jquery-3.1.1.min.js" charset="UTF-8"></script>
+    <script src="./js/main.js" charset="UTF-8"></script>
+    <script src="./toji-gl-matrix-7c8d5dd/dist/gl-matrix-min.js"></script>
+  </head>
+  <body>
+    <p>websocket テスト</p>
+    <div>
+      <p> URI: ws://
+        <input id="uri" type="text" value="localhost:9002">
+      </p>
+      <input type="button" value="接続開始" onclick="openWebsocket()">
+      <input type="button" value="接続終了" onclick="closeWebsocket()">
+    </div>
+    <div>
+      <p>送信内容: 
+        <input id="msg" type="text">
+      </p>
+      <input type="button" value="送信" onclick="send()">
+    </div>
+    <div>
+      受信内容<br>
+      <p id="recieve_contents"></p>
+    </div>
+    
+    
+    <div>
+      オブジェクト <input type="button" value="オブジェクト送信" onclick="sendObject()">
+      <div>
+        name:<input id="object-id" type="text" list="object-name-list" onchange="changeObjectName(this)">
+        <datalist id="object-name-list">
+        </datalist>
+      </div>
+      <div id="object-pos">
+        pos:
+        <input id="object-pos-x" type="number" value="0">
+        <input id="object-pos-y" type="number" value="0">
+        <input id="object-pos-z" type="number" value="0">
+      </div>
+      <div id="object-rot">
+        rot: 
+        <input id="object-rot-x" type="number" value="0">
+        <input id="object-rot-y" type="number" value="0">
+        <input id="object-rot-z" type="number" value="0">
+        <input id="object-rot-w" type="number" value="1">
+      </div>
+      <div id="object-scale">
+        scale: 
+        <input id="object-scale-x" type="number" value="1">
+        <input id="object-scale-y" type="number" value="1">
+        <input id="object-scale-z" type="number" value="1">
+      </div>
+      <div>
+        model-key:
+        <input id="object-model-key" type="text" list="object-model-key-list" value="">
+        <datalist id="object-model-key-list">
+          <option value="tetra_PTNC">
+        </datalist>
+      </div>
+      <div id="object-render-phase">
+        render-phase:
+        <datalist id="object-pipeline-list">
+          <option value="PTNC">
+        </datalist>
+        <datalist id="object-render-phase-list">
+          <option value="forward">
+          <option value="deffered">
+          <option value="zpass">
+        </datalist>
+        <div id="object-used-render-phase">
+          <div>
+            <input name="key" type="text" list="object-render-phase-list" value="forward">
+            =
+            <input name="value" type="text" list="object-pipeline-list" value="PTNC">
+            <input type="button" onclick="deleteObjectRenderPhase(this)" value="削除">
+          </div>
+        </div>
+        <input id="object-render-phase-add" type="button" value="描画フェーズの追加" onclick="addObjectRenderPhase()">
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,34 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>websocket client</title>
+    <script src="./dist/app.js" charset="UTF-8" defer></script>
+  </head>
+  <body>
+    <p>websocket テスト</p>
+    <div id="connect-ui">
+    </div>
+    <div id="recieve-ui">
+      受信内容<br>
+      <p id="recieve_contents"></p>
+    </div>
+
+    <datalist id="object-name-list">
+    </datalist>
+    <datalist id="model-name-list">
+      <option value="tetra_PTNC">
+    </datalist>
+    <datalist id="object-pipeline-list">
+      <option value="PTNC">
+    </datalist>
+    <datalist id="object-render-phase-list">
+      <option value="forward">
+      <option value="deffered">
+      <option value="zpass">
+    </datalist>
+
+    <div id="editor">
+      ここにエディタの内容を書く
+    </div>
+  </body>
+</html>

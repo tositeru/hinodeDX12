@@ -1,0 +1,21 @@
+riot セットアップ
+
+requireをTAGファイル内から使用できるまでの流れ。
+
+以下、OSはWindows10
+
+・インストールするもの
+
+node.js
+
+node.jsのインストール後、以下のパッケージをインストール
+npm install riot riotify riot-compiler browserify gulp browserify vinyl-source-stream
+
+
+作業環境の準備
+
+riot -w -m src/tag <- TAGファイルが変更されたら自動でjsファイルに変換してくれる
+
+-mオプションはモジュール機能を使うときに必要になる
+
+gulp browserify <- app.jsをdest/app.jsに変換する こちらは手動で行う

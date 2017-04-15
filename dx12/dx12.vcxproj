@@ -1,0 +1,659 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{0096DAEF-371C-4339-B482-B4332E6FEABC}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>dx12</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.14393.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <TreatWarningAsError>true</TreatWarningAsError>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <TreatWarningAsError>true</TreatWarningAsError>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <TreatWarningAsError>true</TreatWarningAsError>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <TreatWarningAsError>true</TreatWarningAsError>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="graphics\dx12\commandAllocator\DX12CommandAllocator.h" />
+    <ClInclude Include="graphics\dx12\commandQueue\DX12CommandQueue.h" />
+    <ClInclude Include="graphics\dx12\common\Common.h" />
+    <ClInclude Include="graphics\dx12\common\Exception.h" />
+    <ClInclude Include="graphics\dx12\common\Log.h" />
+    <ClInclude Include="graphics\dx12\common\MacroUtility.h" />
+    <ClInclude Include="graphics\dx12\common\MetaProgramingUtility.h" />
+    <ClInclude Include="graphics\dx12\common\Pimpl.h" />
+    <ClInclude Include="graphics\dx12\common\TypeDefine.h" />
+    <ClInclude Include="graphics\dx12\d3dx12.h" />
+    <ClInclude Include="graphics\dx12\descriptorHeap\DX12DescriptorHeap.h" />
+    <ClInclude Include="graphics\dx12\device\DX12Device.h" />
+    <ClInclude Include="graphics\dx12\DirectXTex\DDSTextureLoader\DDSTextureLoader12.h" />
+    <ClInclude Include="graphics\dx12\DirectXTex\WICTextureLoader\WICTextureLoader12.h" />
+    <ClInclude Include="graphics\dx12\fence\DX12Fence.h" />
+    <ClInclude Include="graphics\dx12\graphicsCommandList\DX12GraphicsCommandList.h" />
+    <ClInclude Include="graphics\dx12\heap\DX12Heap.h" />
+    <ClInclude Include="graphics\dx12\IDX12Interface.h" />
+    <ClInclude Include="graphics\dx12\pipelineState\DX12PipelineState.h" />
+    <ClInclude Include="graphics\dx12\resource\DX12Resource.h" />
+    <ClInclude Include="graphics\dx12\rootSignature\DX12RootSignature.h" />
+    <ClInclude Include="graphics\dx12\sampler\DX12Sampler.h" />
+    <ClInclude Include="graphics\dx12\swapChain\DX12SwapChain.h" />
+    <ClInclude Include="graphics\dx12\utility\Context\Context.h" />
+    <ClInclude Include="graphics\dx12\utility\FrameDataManager\FrameDataManager.h" />
+    <ClInclude Include="graphics\dx12\utility\GBuffer\DefferedLightingManager\DefferedLightingManager.h" />
+    <ClInclude Include="graphics\dx12\utility\GBuffer\DefferedLightingPipeline\DefferedLightingPipeline.h" />
+    <ClInclude Include="graphics\dx12\utility\GBuffer\GBufferManager.h" />
+    <ClInclude Include="graphics\dx12\utility\RingBuffer\ConstantBufferPool\ConstantBufferPool.h" />
+    <ClInclude Include="graphics\dx12\utility\DX12Utility.h" />
+    <ClInclude Include="graphics\dx12\utility\math\SimpleGeometry.h" />
+    <ClInclude Include="graphics\dx12\utility\math\SimpleMath.h" />
+    <ClInclude Include="graphics\dx12\utility\Mesh\Mesh.h" />
+    <ClInclude Include="graphics\dx12\utility\Mesh\MeshPipeline\MeshPipeline.h" />
+    <ClInclude Include="graphics\dx12\utility\Mesh\MeshVertexFormat.h" />
+    <ClInclude Include="graphics\dx12\utility\Mesh\Primitive\Plane\Plane.h" />
+    <ClInclude Include="graphics\dx12\utility\Mesh\Primitive\Tetrahedron\Tetrahedron.h" />
+    <ClInclude Include="graphics\dx12\utility\ResourceUploader\ResourceUploader.h" />
+    <ClInclude Include="graphics\dx12\utility\RingBuffer\RingBuffer.h" />
+    <ClInclude Include="graphics\dx12\utility\RingBuffer\DescriptorHeapPool\DescriptorHeapPool.h" />
+    <ClInclude Include="graphics\dx12\utility\Shader\Includer\Includer.h" />
+    <ClInclude Include="graphics\dx12\utility\Shader\PipelineResourceBinder\PipelineResourceBinder.h" />
+    <ClInclude Include="graphics\dx12\utility\Shader\PipelineSet\PipelineSet.h" />
+    <ClInclude Include="graphics\dx12\utility\Shader\Pipeline\Pipeline.h" />
+    <ClInclude Include="graphics\dx12\utility\Shader\RootSignatureInfo\RootSignatureInfo.h" />
+    <ClInclude Include="graphics\dx12\utility\Shader\Shader.h" />
+    <ClInclude Include="graphics\dx12\utility\Shader\ShaderResourceInfo\ShaderResourceInfo.h" />
+    <ClInclude Include="graphics\dx12\utility\Mesh\Shader\PCVertex\bin\PCVertexPipeline_PSForward_debug.h" />
+    <ClInclude Include="graphics\dx12\utility\Mesh\Shader\PCVertex\bin\PCVertexPipeline_RSForward_debug.h" />
+    <ClInclude Include="graphics\dx12\utility\Mesh\Shader\PCVertex\bin\PCVertexPipeline_VSMain_debug.h" />
+    <ClInclude Include="graphics\dx12\utility\Mesh\Shader\PVertex\bin\PVertexPipeline_PSForward.h" />
+    <ClInclude Include="graphics\dx12\utility\Mesh\Shader\PVertex\bin\PVertexPipeline_PSForward_debug.h" />
+    <ClInclude Include="graphics\dx12\utility\Mesh\Shader\PVertex\bin\PVertexPipeline_RSForward.h" />
+    <ClInclude Include="graphics\dx12\utility\Mesh\Shader\PVertex\bin\PVertexPipeline_RSForward_debug.h" />
+    <ClInclude Include="graphics\dx12\utility\Mesh\Shader\PVertex\bin\PVertexPipeline_VSMain.h" />
+    <ClInclude Include="graphics\dx12\utility\Mesh\Shader\PVertex\bin\PVertexPipeline_VSMain_debug.h" />
+    <ClInclude Include="graphics\dx12\utility\ShadowMap\ShadowMapManager.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="graphics\dx12\utility\winapi\CheckMemoryLeak.h" />
+    <ClInclude Include="graphics\dx12\utility\winapi\KeyObserver.h" />
+    <ClInclude Include="graphics\dx12\utility\Camera\PreviewCamera\PreviewCamera.h" />
+    <ClInclude Include="graphics\dx12\utility\winapi\Window.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="graphics\dx12\commandAllocator\DX12CommandAllocator.cpp" />
+    <ClCompile Include="graphics\dx12\commandQueue\DX12CommandQueue.cpp" />
+    <ClCompile Include="graphics\dx12\common\Exception.cpp" />
+    <ClCompile Include="graphics\dx12\common\Log.cpp" />
+    <ClCompile Include="graphics\dx12\descriptorHeap\DX12DescriptorHeap.cpp" />
+    <ClCompile Include="graphics\dx12\device\DX12Device.cpp" />
+    <ClCompile Include="graphics\dx12\DirectXTex\DDSTextureLoader\DDSTextureLoader12.cpp" />
+    <ClCompile Include="graphics\dx12\DirectXTex\WICTextureLoader\WICTextureLoader12.cpp" />
+    <ClCompile Include="graphics\dx12\fence\DX12Fence.cpp" />
+    <ClCompile Include="graphics\dx12\graphicsCommandList\DX12GraphicsCommandList.cpp" />
+    <ClCompile Include="graphics\dx12\heap\DX12Heap.cpp" />
+    <ClCompile Include="graphics\dx12\pipelineState\DX12PipelineState.cpp" />
+    <ClCompile Include="graphics\dx12\resource\DX12Resource.cpp" />
+    <ClCompile Include="graphics\dx12\rootSignature\DX12RootSignature.cpp" />
+    <ClCompile Include="graphics\dx12\sampler\DX12Sampler.cpp" />
+    <ClCompile Include="graphics\dx12\swapChain\DX12SwapChain.cpp" />
+    <ClCompile Include="graphics\dx12\utility\Context\Context.cpp" />
+    <ClCompile Include="graphics\dx12\utility\FrameDataManager\FrameDataManager.cpp" />
+    <ClCompile Include="graphics\dx12\utility\GBuffer\DefferedLightingManager\DefferedLightingManager.cpp" />
+    <ClCompile Include="graphics\dx12\utility\GBuffer\DefferedLightingPipeline\DefferedLightingPipeline.cpp" />
+    <ClCompile Include="graphics\dx12\utility\GBuffer\GBufferManager.cpp" />
+    <ClCompile Include="graphics\dx12\utility\RingBuffer\ConstantBufferPool\ConstantBufferPool.cpp" />
+    <ClCompile Include="graphics\dx12\utility\DX12Utility.cpp" />
+    <ClCompile Include="graphics\dx12\utility\Mesh\Mesh.cpp" />
+    <ClCompile Include="graphics\dx12\utility\Mesh\MeshPipeline\MeshPipeline.cpp" />
+    <ClCompile Include="graphics\dx12\utility\Mesh\Primitive\Plane\Plane.cpp" />
+    <ClCompile Include="graphics\dx12\utility\Mesh\Primitive\Tetrahedron\Tetrahedron.cpp" />
+    <ClCompile Include="graphics\dx12\utility\ResourceUploader\ResourceUploader.cpp" />
+    <ClCompile Include="graphics\dx12\utility\RingBuffer\RingBuffer.cpp" />
+    <ClCompile Include="graphics\dx12\utility\RingBuffer\DescriptorHeapPool\DescriptorHeapPool.cpp" />
+    <ClCompile Include="graphics\dx12\utility\Shader\Includer\Includer.cpp" />
+    <ClCompile Include="graphics\dx12\utility\Shader\PipelineResourceBinder\PipelineResourceBinder.cpp" />
+    <ClCompile Include="graphics\dx12\utility\Shader\PipelineSet\PipelineSet.cpp" />
+    <ClCompile Include="graphics\dx12\utility\Shader\Pipeline\Pipeline.cpp" />
+    <ClCompile Include="graphics\dx12\utility\Shader\RootSignatureInfo\RootSignatureInfo.cpp" />
+    <ClCompile Include="graphics\dx12\utility\Shader\Shader.cpp" />
+    <ClCompile Include="graphics\dx12\utility\Shader\ShaderResourceInfo\ShaderResourceInfo.cpp" />
+    <ClCompile Include="graphics\dx12\utility\ShadowMap\ShadowMapManager.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="graphics\dx12\utility\winapi\CheckMemoryLeak.cpp" />
+    <ClCompile Include="graphics\dx12\utility\Camera\PreviewCamera\PreviewCamera.cpp" />
+    <ClCompile Include="graphics\dx12\utility\winapi\Window.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Natvis Include="NatvisFile.natvis" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="graphics\dx12\utility\Shader\Includer\MakeShaderSystemRootDirHeader.bat">
+      <FileType>Document</FileType>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(RelativeDir)ShaderSystemRootPath.h</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(RelativeDir)ShaderSystemRootPath.h</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(RelativeDir)ShaderSystemRootPath.h</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(RelativeDir)ShaderSystemRootPath.h</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(Identity) $(ProjectDir)graphics\dx12\utility\HLSL %(RelativeDir)</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(Identity) $(ProjectDir)graphics\dx12\utility\HLSL %(RelativeDir)</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(Identity) $(ProjectDir)graphics\dx12\utility\HLSL %(RelativeDir)</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(Identity) $(ProjectDir)graphics\dx12\utility\HLSL %(RelativeDir)</Command>
+    </CustomBuild>
+    <None Include="graphics\dx12\utility\HLSL\MacroDefine.hlsli" />
+    <None Include="graphics\dx12\utility\HLSL\RootSignatureCommon.hlsli" />
+    <None Include="graphics\dx12\utility\HLSL\StructureCommon.hlsli" />
+    <None Include="graphics\dx12\utility\HLSL\Utility.hlsli" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="graphics\dx12\utility\Mesh\Shader\PCVertex\PCVertexPipeline.hlsl">
+      <FileType>HLSL</FileType>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(RelativeDir)..\..\..\HLSL\MacroDefine.hlsli;%(RelativeDir)..\..\..\HLSL\RootSignatureCommon.hlsli;%(RelativeDir)..\..\..\HLSL\Utility.hlsli;%(RelativeDir)..\..\..\HLSL\StructureCommon.hlsli;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(RelativeDir)..\..\..\HLSL\MacroDefine.hlsli;%(RelativeDir)..\..\..\HLSL\RootSignatureCommon.hlsli;%(RelativeDir)..\..\..\HLSL\Utility.hlsli;%(RelativeDir)..\..\..\HLSL\StructureCommon.hlsli;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(RelativeDir)..\..\..\HLSL\MacroDefine.hlsli;%(RelativeDir)..\..\..\HLSL\RootSignatureCommon.hlsli;%(RelativeDir)..\..\..\HLSL\Utility.hlsli;%(RelativeDir)..\..\..\HLSL\StructureCommon.hlsli;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(RelativeDir)..\..\..\HLSL\MacroDefine.hlsli;%(RelativeDir)..\..\..\HLSL\RootSignatureCommon.hlsli;%(RelativeDir)..\..\..\HLSL\Utility.hlsli;%(RelativeDir)..\..\..\HLSL\StructureCommon.hlsli;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(RelativeDir)bin\%(Filename)_VSMain.h;%(RelativeDir)bin\%(Filename)_PSForward.h;%(RelativeDir)bin\%(Filename)_RSForward.h;%(RelativeDir)bin\%(Filename)_VSDeffered.h;%(RelativeDir)bin\%(Filename)_PSDeffered.h;%(RelativeDir)bin\%(Filename)_RSZPass.h;%(RelativeDir)bin\%(Filename)_VSZPass.h;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(RelativeDir)bin\%(Filename)_VSMain.h;%(RelativeDir)bin\%(Filename)_PSForward.h;%(RelativeDir)bin\%(Filename)_RSForward.h;%(RelativeDir)bin\%(Filename)_VSDeffered.h;%(RelativeDir)bin\%(Filename)_PSDeffered.h;%(RelativeDir)bin\%(Filename)_RSZPass.h;%(RelativeDir)bin\%(Filename)_VSZPass.h;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">mkdir %(RelativeDir)bin &gt; NUL 2&gt;&amp;1
+SET COMMON_FXC_OPT=/nologo /Ges /Gis /DHLSL=1
+fxc /T vs_5_1 /E VSMain /Fh%(RelativeDir)bin\%(Filename)_VSMain.h %COMMON_FXC_OPT% %(Identity)
+fxc /T ps_5_1 /E PSForward /Fh%(RelativeDir)bin\%(Filename)_PSForward.h %COMMON_FXC_OPT% %(Identity)
+fxc /T rootsig_1_1 /E RSForward /Fh%(RelativeDir)bin\%(Filename)_RSForward.h %COMMON_FXC_OPT% %(Identity)
+fxc /T vs_5_1 /E VSDeffered /Fh%(RelativeDir)bin\%(Filename)_VSDeffered.h %COMMON_FXC_OPT% %(Identity)
+fxc /T ps_5_1 /E PSDeffered /Fh%(RelativeDir)bin\%(Filename)_PSDeffered.h %COMMON_FXC_OPT% %(Identity)
+fxc /T rootsig_1_1 /E RSZPass /Fh%(RelativeDir)bin\%(Filename)_RSZPass.h %COMMON_FXC_OPT% %(Identity)
+fxc /T vs_5_1 /E VSZPass /Fh%(RelativeDir)bin\%(Filename)_VSZPass.h %COMMON_FXC_OPT% %(Identity)
+</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">mkdir %(RelativeDir)bin &gt; NUL 2&gt;&amp;1
+SET COMMON_FXC_OPT=/nologo /Ges /Gis /DHLSL=1
+fxc /T vs_5_1 /E VSMain /Fh%(RelativeDir)bin\%(Filename)_VSMain.h %COMMON_FXC_OPT% %(Identity)
+fxc /T ps_5_1 /E PSForward /Fh%(RelativeDir)bin\%(Filename)_PSForward.h %COMMON_FXC_OPT% %(Identity)
+fxc /T rootsig_1_1 /E RSForward /Fh%(RelativeDir)bin\%(Filename)_RSForward.h %COMMON_FXC_OPT% %(Identity)
+fxc /T vs_5_1 /E VSDeffered /Fh%(RelativeDir)bin\%(Filename)_VSDeffered.h %COMMON_FXC_OPT% %(Identity)
+fxc /T ps_5_1 /E PSDeffered /Fh%(RelativeDir)bin\%(Filename)_PSDeffered.h %COMMON_FXC_OPT% %(Identity)
+fxc /T rootsig_1_1 /E RSZPass /Fh%(RelativeDir)bin\%(Filename)_RSZPass.h %COMMON_FXC_OPT% %(Identity)
+fxc /T vs_5_1 /E VSZPass /Fh%(RelativeDir)bin\%(Filename)_VSZPass.h %COMMON_FXC_OPT% %(Identity)
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(RelativeDir)bin\%(Filename)_VSMain_debug.h;%(RelativeDir)bin\%(Filename)_PSForward_debug.h;%(RelativeDir)bin\%(Filename)_RSForward_debug.h;%(RelativeDir)bin\%(Filename)_VSDeffered_debug.h;%(RelativeDir)bin\%(Filename)_PSDeffered_debug.h;%(RelativeDir)bin\%(Filename)_RSZPass_debug.h;%(RelativeDir)bin\%(Filename)_VSZPass_debug.h;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(RelativeDir)bin\%(Filename)_VSMain_debug.h;%(RelativeDir)bin\%(Filename)_PSForward_debug.h;%(RelativeDir)bin\%(Filename)_RSForward_debug.h;%(RelativeDir)bin\%(Filename)_VSDeffered_debug.h;%(RelativeDir)bin\%(Filename)_PSDeffered_debug.h;%(RelativeDir)bin\%(Filename)_RSZPass_debug.h;%(RelativeDir)bin\%(Filename)_VSZPass_debug.h;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">mkdir %(RelativeDir)bin &gt; NUL 2&gt;&amp;1
+SET COMMON_FXC_OPT=/Od /nologo /Ges /Gis /DHLSL=1
+fxc /T vs_5_1 /E VSMain /Fh%(RelativeDir)bin\%(Filename)_VSMain_debug.h %COMMON_FXC_OPT% %(Identity)
+fxc /T ps_5_1 /E PSForward /Fh%(RelativeDir)bin\%(Filename)_PSForward_debug.h %COMMON_FXC_OPT% %(Identity)
+fxc /T rootsig_1_1 /E RSForward /Fh%(RelativeDir)bin\%(Filename)_RSForward_debug.h %COMMON_FXC_OPT% %(Identity)
+fxc /T vs_5_1 /E VSDeffered /Fh%(RelativeDir)bin\%(Filename)_VSDeffered_debug.h %COMMON_FXC_OPT% %(Identity)
+fxc /T ps_5_1 /E PSDeffered /Fh%(RelativeDir)bin\%(Filename)_PSDeffered_debug.h %COMMON_FXC_OPT% %(Identity)
+fxc /T rootsig_1_1 /E RSZPass /Fh%(RelativeDir)bin\%(Filename)_RSZPass_debug.h %COMMON_FXC_OPT% %(Identity)
+fxc /T vs_5_1 /E VSZPass /Fh%(RelativeDir)bin\%(Filename)_VSZPass_debug.h %COMMON_FXC_OPT% %(Identity)
+</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">mkdir %(RelativeDir)bin &gt; NUL 2&gt;&amp;1
+SET COMMON_FXC_OPT=/Od /nologo /Ges /Gis /DHLSL=1
+fxc /T vs_5_1 /E VSMain /Fh%(RelativeDir)bin\%(Filename)_VSMain_debug.h %COMMON_FXC_OPT% %(Identity)
+fxc /T ps_5_1 /E PSForward /Fh%(RelativeDir)bin\%(Filename)_PSForward_debug.h %COMMON_FXC_OPT% %(Identity)
+fxc /T rootsig_1_1 /E RSForward /Fh%(RelativeDir)bin\%(Filename)_RSForward_debug.h %COMMON_FXC_OPT% %(Identity)
+fxc /T vs_5_1 /E VSDeffered /Fh%(RelativeDir)bin\%(Filename)_VSDeffered_debug.h %COMMON_FXC_OPT% %(Identity)
+fxc /T ps_5_1 /E PSDeffered /Fh%(RelativeDir)bin\%(Filename)_PSDeffered_debug.h %COMMON_FXC_OPT% %(Identity)
+fxc /T rootsig_1_1 /E RSZPass /Fh%(RelativeDir)bin\%(Filename)_RSZPass_debug.h %COMMON_FXC_OPT% %(Identity)
+fxc /T vs_5_1 /E VSZPass /Fh%(RelativeDir)bin\%(Filename)_VSZPass_debug.h %COMMON_FXC_OPT% %(Identity)
+</Command>
+    </CustomBuild>
+    <CustomBuild Include="graphics\dx12\utility\Mesh\Shader\PVertex\PVertexPipeline.hlsl">
+      <FileType>Document</FileType>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(RelativeDir)..\..\..\HLSL\MacroDefine.hlsli;%(RelativeDir)..\..\..\HLSL\RootSignatureCommon.hlsli;%(RelativeDir)..\..\..\HLSL\Utility.hlsli;%(RelativeDir)..\..\..\HLSL\StructureCommon.hlsli;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(RelativeDir)..\..\..\HLSL\MacroDefine.hlsli;%(RelativeDir)..\..\..\HLSL\RootSignatureCommon.hlsli;%(RelativeDir)..\..\..\HLSL\Utility.hlsli;%(RelativeDir)..\..\..\HLSL\StructureCommon.hlsli;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(RelativeDir)..\..\..\HLSL\MacroDefine.hlsli;%(RelativeDir)..\..\..\HLSL\RootSignatureCommon.hlsli;%(RelativeDir)..\..\..\HLSL\Utility.hlsli;%(RelativeDir)..\..\..\HLSL\StructureCommon.hlsli;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(RelativeDir)..\..\..\HLSL\MacroDefine.hlsli;%(RelativeDir)..\..\..\HLSL\RootSignatureCommon.hlsli;%(RelativeDir)..\..\..\HLSL\Utility.hlsli;%(RelativeDir)..\..\..\HLSL\StructureCommon.hlsli;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(RelativeDir)bin\%(Filename)_VSMain.h;%(RelativeDir)bin\%(Filename)_PSForward.h;%(RelativeDir)bin\%(Filename)_RSForward.h;%(RelativeDir)bin\%(Filename)_VSDeffered.h;%(RelativeDir)bin\%(Filename)_PSDeffered.h;%(RelativeDir)bin\%(Filename)_VSZPass.h;%(RelativeDir)bin\%(Filename)_RSZPass.h;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">mkdir %(RelativeDir)bin &gt; NUL 2&gt;&amp;1
+SET COMMON_FXC_OPT=/nologo /Ges /Gis /DHLSL=1
+fxc /T vs_5_1 /E VSMain /Fh%(RelativeDir)bin\%(Filename)_VSMain.h %COMMON_FXC_OPT% %(Identity)
+fxc /T ps_5_1 /E PSForward /Fh%(RelativeDir)bin\%(Filename)_PSForward.h %COMMON_FXC_OPT% %(Identity)
+fxc /T rootsig_1_1 /E RSForward /Fh%(RelativeDir)bin\%(Filename)_RSForward.h %COMMON_FXC_OPT% %(Identity)
+fxc /T vs_5_1 /E VSDeffered /Fh%(RelativeDir)bin\%(Filename)_VSDeffered.h %COMMON_FXC_OPT% %(Identity)
+fxc /T ps_5_1 /E PSDeffered /Fh%(RelativeDir)bin\%(Filename)_PSDeffered.h %COMMON_FXC_OPT% %(Identity)
+fxc /T vs_5_1 /E VSZPass /Fh%(RelativeDir)bin\%(Filename)_VSZPass.h %COMMON_FXC_OPT% %(Identity)
+fxc /T rootsig_1_1 /E RSZPass /Fh%(RelativeDir)bin\%(Filename)_RSZPass.h %COMMON_FXC_OPT% %(Identity)
+</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">mkdir %(RelativeDir)bin &gt; NUL 2&gt;&amp;1
+SET COMMON_FXC_OPT=/nologo /Ges /Gis /DHLSL=1
+fxc /T vs_5_1 /E VSMain /Fh%(RelativeDir)bin\%(Filename)_VSMain.h %COMMON_FXC_OPT% %(Identity)
+fxc /T ps_5_1 /E PSForward /Fh%(RelativeDir)bin\%(Filename)_PSForward.h %COMMON_FXC_OPT% %(Identity)
+fxc /T rootsig_1_1 /E RSForward /Fh%(RelativeDir)bin\%(Filename)_RSForward.h %COMMON_FXC_OPT% %(Identity)
+fxc /T vs_5_1 /E VSDeffered /Fh%(RelativeDir)bin\%(Filename)_VSDeffered.h %COMMON_FXC_OPT% %(Identity)
+fxc /T ps_5_1 /E PSDeffered /Fh%(RelativeDir)bin\%(Filename)_PSDeffered.h %COMMON_FXC_OPT% %(Identity)
+fxc /T vs_5_1 /E VSZPass /Fh%(RelativeDir)bin\%(Filename)_VSZPass.h %COMMON_FXC_OPT% %(Identity)
+fxc /T rootsig_1_1 /E RSZPass /Fh%(RelativeDir)bin\%(Filename)_RSZPass.h %COMMON_FXC_OPT% %(Identity)
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(RelativeDir)bin\%(Filename)_VSMain.h;%(RelativeDir)bin\%(Filename)_PSForward.h;%(RelativeDir)bin\%(Filename)_RSForward.h;%(RelativeDir)bin\%(Filename)_VSDeffered.h;%(RelativeDir)bin\%(Filename)_PSDeffered.h;%(RelativeDir)bin\%(Filename)_VSZPass.h;%(RelativeDir)bin\%(Filename)_RSZPass.h;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">mkdir %(RelativeDir)bin &gt; NUL 2&gt;&amp;1
+SET COMMON_FXC_OPT=/Od /nologo /Ges /Gis /DHLSL=1
+fxc /T vs_5_1 /E VSMain /Fh%(RelativeDir)bin\%(Filename)_VSMain_debug.h %COMMON_FXC_OPT% %(Identity)
+fxc /T ps_5_1 /E PSForward /Fh%(RelativeDir)bin\%(Filename)_PSForward_debug.h %COMMON_FXC_OPT% %(Identity)
+fxc /T rootsig_1_1 /E RSForward /Fh%(RelativeDir)bin\%(Filename)_RSForward_debug.h %COMMON_FXC_OPT% %(Identity)
+fxc /T vs_5_1 /E VSDeffered /Fh%(RelativeDir)bin\%(Filename)_VSDeffered_debug.h %COMMON_FXC_OPT% %(Identity)
+fxc /T ps_5_1 /E PSDeffered /Fh%(RelativeDir)bin\%(Filename)_PSDeffered_debug.h %COMMON_FXC_OPT% %(Identity)
+fxc /T vs_5_1 /E VSZPass /Fh%(RelativeDir)bin\%(Filename)_VSZPass_debug.h %COMMON_FXC_OPT% %(Identity)
+fxc /T rootsig_1_1 /E RSZPass /Fh%(RelativeDir)bin\%(Filename)_RSZPass_debug.h %COMMON_FXC_OPT% %(Identity)
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(RelativeDir)bin\%(Filename)_VSMain_debug.h;%(RelativeDir)bin\%(Filename)_PSForward_debug.h;%(RelativeDir)bin\%(Filename)_RSForward_debug.h;%(RelativeDir)bin\%(Filename)_VSDeffered_debug.h;%(RelativeDir)bin\%(Filename)_PSDeffered_debug.h;%(RelativeDir)bin\%(Filename)_VSZPass_debug.h;%(RelativeDir)bin\%(Filename)_RSZPass_debug.h;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">mkdir %(RelativeDir)bin &gt; NUL 2&gt;&amp;1
+SET COMMON_FXC_OPT=/Od /nologo /Ges /Gis /DHLSL=1
+fxc /T vs_5_1 /E VSMain /Fh%(RelativeDir)bin\%(Filename)_VSMain_debug.h %COMMON_FXC_OPT% %(Identity)
+fxc /T ps_5_1 /E PSForward /Fh%(RelativeDir)bin\%(Filename)_PSForward_debug.h %COMMON_FXC_OPT% %(Identity)
+fxc /T rootsig_1_1 /E RSForward /Fh%(RelativeDir)bin\%(Filename)_RSForward_debug.h %COMMON_FXC_OPT% %(Identity)
+fxc /T vs_5_1 /E VSDeffered /Fh%(RelativeDir)bin\%(Filename)_VSDeffered_debug.h %COMMON_FXC_OPT% %(Identity)
+fxc /T ps_5_1 /E PSDeffered /Fh%(RelativeDir)bin\%(Filename)_PSDeffered_debug.h %COMMON_FXC_OPT% %(Identity)
+fxc /T vs_5_1 /E VSZPass /Fh%(RelativeDir)bin\%(Filename)_VSZPass_debug.h %COMMON_FXC_OPT% %(Identity)
+fxc /T rootsig_1_1 /E RSZPass /Fh%(RelativeDir)bin\%(Filename)_RSZPass_debug.h %COMMON_FXC_OPT% %(Identity)
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(RelativeDir)bin\%(Filename)_VSMain_debug.h;%(RelativeDir)bin\%(Filename)_PSForward_debug.h;%(RelativeDir)bin\%(Filename)_RSForward_debug.h;%(RelativeDir)bin\%(Filename)_VSDeffered_debug.h;%(RelativeDir)bin\%(Filename)_PSDeffered_debug.h;%(RelativeDir)bin\%(Filename)_VSZPass_debug.h;%(RelativeDir)bin\%(Filename)_RSZPass_debug.h;%(Outputs)</Outputs>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="graphics\dx12\utility\Mesh\Shader\PTVertex\PTVertexPipeline.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Vertex</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Vertex</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Vertex</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Vertex</ShaderType>
+      <FileType>Document</FileType>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(RelativeDir)..\..\..\HLSL\MacroDefine.hlsli;%(RelativeDir)..\..\..\HLSL\RootSignatureCommon.hlsli;%(RelativeDir)..\..\..\HLSL\Utility.hlsli;%(RelativeDir)..\..\..\HLSL\StructureCommon.hlsli;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(RelativeDir)..\..\..\HLSL\MacroDefine.hlsli;%(RelativeDir)..\..\..\HLSL\RootSignatureCommon.hlsli;%(RelativeDir)..\..\..\HLSL\Utility.hlsli;%(RelativeDir)..\..\..\HLSL\StructureCommon.hlsli;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(RelativeDir)..\..\..\HLSL\MacroDefine.hlsli;%(RelativeDir)..\..\..\HLSL\RootSignatureCommon.hlsli;%(RelativeDir)..\..\..\HLSL\Utility.hlsli;%(RelativeDir)..\..\..\HLSL\StructureCommon.hlsli;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(RelativeDir)..\..\..\HLSL\MacroDefine.hlsli;%(RelativeDir)..\..\..\HLSL\RootSignatureCommon.hlsli;%(RelativeDir)..\..\..\HLSL\Utility.hlsli;%(RelativeDir)..\..\..\HLSL\StructureCommon.hlsli;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(RelativeDir)bin\%(Filename)_VSMain_debug.h;%(RelativeDir)bin\%(Filename)_PSForward_debug.h;%(RelativeDir)bin\%(Filename)_RSForward_debug.h;%(RelativeDir)bin\%(Filename)_VSDeffered_debug.h;%(RelativeDir)bin\%(Filename)_PSDeffered_debug.h;%(RelativeDir)bin\%(Filename)_VSZPass_debug.h;%(RelativeDir)bin\%(Filename)_RSZPass_debug.h;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(RelativeDir)bin\%(Filename)_VSMain_debug.h;%(RelativeDir)bin\%(Filename)_PSForward_debug.h;%(RelativeDir)bin\%(Filename)_RSForward_debug.h;%(RelativeDir)bin\%(Filename)_VSDeffered_debug.h;%(RelativeDir)bin\%(Filename)_PSDeffered_debug.h;%(RelativeDir)bin\%(Filename)_VSZPass_debug.h;%(RelativeDir)bin\%(Filename)_RSZPass_debug.h;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">mkdir %(RelativeDir)bin &gt; NUL 2&gt;&amp;1
+SET COMMON_FXC_OPT=/Od /nologo /Ges /Gis /DHLSL=1
+fxc /T vs_5_1 /E VSMain /Fh%(RelativeDir)bin\%(Filename)_VSMain_debug.h %COMMON_FXC_OPT% %(Identity)
+fxc /T ps_5_1 /E PSForward /Fh%(RelativeDir)bin\%(Filename)_PSForward_debug.h %COMMON_FXC_OPT% %(Identity)
+fxc /T rootsig_1_1 /E RSForward /Fh%(RelativeDir)bin\%(Filename)_RSForward_debug.h %COMMON_FXC_OPT% %(Identity)
+fxc /T vs_5_1 /E VSDeffered /Fh%(RelativeDir)bin\%(Filename)_VSDeffered_debug.h %COMMON_FXC_OPT% %(Identity)
+fxc /T ps_5_1 /E PSDeffered /Fh%(RelativeDir)bin\%(Filename)_PSDeffered_debug.h %COMMON_FXC_OPT% %(Identity)
+fxc /T vs_5_1 /E VSZPass /Fh%(RelativeDir)bin\%(Filename)_VSZPass_debug.h %COMMON_FXC_OPT% %(Identity)
+fxc /T rootsig_1_1 /E RSZPass /Fh%(RelativeDir)bin\%(Filename)_RSZPass_debug.h %COMMON_FXC_OPT% %(Identity)
+</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">mkdir %(RelativeDir)bin &gt; NUL 2&gt;&amp;1
+SET COMMON_FXC_OPT=/Od /nologo /Ges /Gis /DHLSL=1
+fxc /T vs_5_1 /E VSMain /Fh%(RelativeDir)bin\%(Filename)_VSMain_debug.h %COMMON_FXC_OPT% %(Identity)
+fxc /T ps_5_1 /E PSForward /Fh%(RelativeDir)bin\%(Filename)_PSForward_debug.h %COMMON_FXC_OPT% %(Identity)
+fxc /T rootsig_1_1 /E RSForward /Fh%(RelativeDir)bin\%(Filename)_RSForward_debug.h %COMMON_FXC_OPT% %(Identity)
+fxc /T vs_5_1 /E VSDeffered /Fh%(RelativeDir)bin\%(Filename)_VSDeffered_debug.h %COMMON_FXC_OPT% %(Identity)
+fxc /T ps_5_1 /E PSDeffered /Fh%(RelativeDir)bin\%(Filename)_PSDeffered_debug.h %COMMON_FXC_OPT% %(Identity)
+fxc /T vs_5_1 /E VSZPass /Fh%(RelativeDir)bin\%(Filename)_VSZPass_debug.h %COMMON_FXC_OPT% %(Identity)
+fxc /T rootsig_1_1 /E RSZPass /Fh%(RelativeDir)bin\%(Filename)_RSZPass_debug.h %COMMON_FXC_OPT% %(Identity)
+</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">mkdir %(RelativeDir)bin &gt; NUL 2&gt;&amp;1
+SET COMMON_FXC_OPT=/Od /nologo /Ges /Gis /DHLSL=1
+fxc /T vs_5_1 /E VSMain /Fh%(RelativeDir)bin\%(Filename)_VSMain.h %COMMON_FXC_OPT% %(Identity)
+fxc /T ps_5_1 /E PSForward /Fh%(RelativeDir)bin\%(Filename)_PSForward.h %COMMON_FXC_OPT% %(Identity)
+fxc /T rootsig_1_1 /E RSForward /Fh%(RelativeDir)bin\%(Filename)_RSForward.h %COMMON_FXC_OPT% %(Identity)
+fxc /T vs_5_1 /E VSDeffered /Fh%(RelativeDir)bin\%(Filename)_VSDeffered.h %COMMON_FXC_OPT% %(Identity)
+fxc /T ps_5_1 /E PSDeffered /Fh%(RelativeDir)bin\%(Filename)_PSDeffered.h %COMMON_FXC_OPT% %(Identity)
+fxc /T vs_5_1 /E VSZPass /Fh%(RelativeDir)bin\%(Filename)_VSZPass.h %COMMON_FXC_OPT% %(Identity)
+fxc /T rootsig_1_1 /E RSZPass /Fh%(RelativeDir)bin\%(Filename)_RSZPass.h %COMMON_FXC_OPT% %(Identity)
+</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">mkdir %(RelativeDir)bin &gt; NUL 2&gt;&amp;1
+SET COMMON_FXC_OPT=/Od /nologo /Ges /Gis /DHLSL=1
+fxc /T vs_5_1 /E VSMain /Fh%(RelativeDir)bin\%(Filename)_VSMain.h %COMMON_FXC_OPT% %(Identity)
+fxc /T ps_5_1 /E PSForward /Fh%(RelativeDir)bin\%(Filename)_PSForward.h %COMMON_FXC_OPT% %(Identity)
+fxc /T rootsig_1_1 /E RSForward /Fh%(RelativeDir)bin\%(Filename)_RSForward.h %COMMON_FXC_OPT% %(Identity)
+fxc /T vs_5_1 /E VSDeffered /Fh%(RelativeDir)bin\%(Filename)_VSDeffered.h %COMMON_FXC_OPT% %(Identity)
+fxc /T ps_5_1 /E PSDeffered /Fh%(RelativeDir)bin\%(Filename)_PSDeffered.h %COMMON_FXC_OPT% %(Identity)
+fxc /T vs_5_1 /E VSZPass /Fh%(RelativeDir)bin\%(Filename)_VSZPass.h %COMMON_FXC_OPT% %(Identity)
+fxc /T rootsig_1_1 /E RSZPass /Fh%(RelativeDir)bin\%(Filename)_RSZPass.h %COMMON_FXC_OPT% %(Identity)
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(RelativeDir)bin\%(Filename)_VSMain.h;%(RelativeDir)bin\%(Filename)_PSForward.h;%(RelativeDir)bin\%(Filename)_RSForward.h;%(RelativeDir)bin\%(Filename)_VSDeffered.h;%(RelativeDir)bin\%(Filename)_PSDeffered.h;%(RelativeDir)bin\%(Filename)_VSZPass.h;%(RelativeDir)bin\%(Filename)_RSZPass.h;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(RelativeDir)bin\%(Filename)_VSMain.h;%(RelativeDir)bin\%(Filename)_PSForward.h;%(RelativeDir)bin\%(Filename)_RSForward.h;%(RelativeDir)bin\%(Filename)_VSDeffered.h;%(RelativeDir)bin\%(Filename)_PSDeffered.h;%(RelativeDir)bin\%(Filename)_VSZPass.h;%(RelativeDir)bin\%(Filename)_RSZPass.h;%(Outputs)</Outputs>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="graphics\dx12\utility\Mesh\Shader\PNVertex\PNVertexPipeline.hlsl">
+      <FileType>Document</FileType>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(RelativeDir)..\..\..\HLSL\MacroDefine.hlsli;%(RelativeDir)..\..\..\HLSL\RootSignatureCommon.hlsli;%(RelativeDir)..\..\..\HLSL\Utility.hlsli;%(RelativeDir)..\..\..\HLSL\StructureCommon.hlsli;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(RelativeDir)..\..\..\HLSL\MacroDefine.hlsli;%(RelativeDir)..\..\..\HLSL\RootSignatureCommon.hlsli;%(RelativeDir)..\..\..\HLSL\Utility.hlsli;%(RelativeDir)..\..\..\HLSL\StructureCommon.hlsli;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(RelativeDir)..\..\..\HLSL\MacroDefine.hlsli;%(RelativeDir)..\..\..\HLSL\RootSignatureCommon.hlsli;%(RelativeDir)..\..\..\HLSL\Utility.hlsli;%(RelativeDir)..\..\..\HLSL\StructureCommon.hlsli;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(RelativeDir)..\..\..\HLSL\MacroDefine.hlsli;%(RelativeDir)..\..\..\HLSL\RootSignatureCommon.hlsli;%(RelativeDir)..\..\..\HLSL\Utility.hlsli;%(RelativeDir)..\..\..\HLSL\StructureCommon.hlsli;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(RelativeDir)bin\%(Filename)_VSMain_debug.h;%(RelativeDir)bin\%(Filename)_PSForward_debug.h;%(RelativeDir)bin\%(Filename)_RSForward_debug.h;%(RelativeDir)bin\%(Filename)_PSDeffered_debug.h;%(RelativeDir)bin\%(Filename)_RSDeffered_debug.h;%(RelativeDir)bin\%(Filename)_VSZPass_debug.h;%(RelativeDir)bin\%(Filename)_RSZPass_debug.h;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(RelativeDir)bin\%(Filename)_VSMain_debug.h;%(RelativeDir)bin\%(Filename)_PSForward_debug.h;%(RelativeDir)bin\%(Filename)_RSForward_debug.h;%(RelativeDir)bin\%(Filename)_PSDeffered_debug.h;%(RelativeDir)bin\%(Filename)_RSDeffered_debug.h;%(RelativeDir)bin\%(Filename)_VSZPass_debug.h;%(RelativeDir)bin\%(Filename)_RSZPass_debug.h;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">mkdir %(RelativeDir)bin &gt; NUL 2&gt;&amp;1
+SET COMMON_FXC_OPT=/Od /nologo /Ges /Gis /DHLSL=1
+fxc /T vs_5_1 /E VSMain /Fh%(RelativeDir)bin\%(Filename)_VSMain_debug.h %COMMON_FXC_OPT% %(Identity)
+fxc /T ps_5_1 /E PSForward /Fh%(RelativeDir)bin\%(Filename)_PSForward_debug.h %COMMON_FXC_OPT% %(Identity)
+fxc /T rootsig_1_1 /E RSForward /Fh%(RelativeDir)bin\%(Filename)_RSForward_debug.h %COMMON_FXC_OPT% %(Identity)
+fxc /T ps_5_1 /E PSDeffered /Fh%(RelativeDir)bin\%(Filename)_PSDeffered_debug.h %COMMON_FXC_OPT% %(Identity)
+fxc /T rootsig_1_1 /E RSDeffered /Fh%(RelativeDir)bin\%(Filename)_RSDeffered_debug.h %COMMON_FXC_OPT% %(Identity)
+fxc /T rootsig_1_1 /E RSZPass /Fh%(RelativeDir)bin\%(Filename)_RSZPass_debug.h %COMMON_FXC_OPT% %(Identity)
+fxc /T vs_5_1 /E VSZPass /Fh%(RelativeDir)bin\%(Filename)_VSZPass_debug.h %COMMON_FXC_OPT% %(Identity)
+</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">mkdir %(RelativeDir)bin &gt; NUL 2&gt;&amp;1
+SET COMMON_FXC_OPT=/Od /nologo /Ges /Gis /DHLSL=1
+fxc /T vs_5_1 /E VSMain /Fh%(RelativeDir)bin\%(Filename)_VSMain_debug.h %COMMON_FXC_OPT% %(Identity)
+fxc /T ps_5_1 /E PSForward /Fh%(RelativeDir)bin\%(Filename)_PSForward_debug.h %COMMON_FXC_OPT% %(Identity)
+fxc /T rootsig_1_1 /E RSForward /Fh%(RelativeDir)bin\%(Filename)_RSForward_debug.h %COMMON_FXC_OPT% %(Identity)
+fxc /T ps_5_1 /E PSDeffered /Fh%(RelativeDir)bin\%(Filename)_PSDeffered_debug.h %COMMON_FXC_OPT% %(Identity)
+fxc /T rootsig_1_1 /E RSDeffered /Fh%(RelativeDir)bin\%(Filename)_RSDeffered_debug.h %COMMON_FXC_OPT% %(Identity)
+fxc /T rootsig_1_1 /E RSZPass /Fh%(RelativeDir)bin\%(Filename)_RSZPass_debug.h %COMMON_FXC_OPT% %(Identity)
+fxc /T vs_5_1 /E VSZPass /Fh%(RelativeDir)bin\%(Filename)_VSZPass_debug.h %COMMON_FXC_OPT% %(Identity)
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(RelativeDir)bin\%(Filename)_VSMain.h;%(RelativeDir)bin\%(Filename)_PSForward.h;%(RelativeDir)bin\%(Filename)_RSForward.h;%(RelativeDir)bin\%(Filename)_PSDeffered.h;%(RelativeDir)bin\%(Filename)_RSDeffered.h;%(RelativeDir)bin\%(Filename)_VSZPass.h;%(RelativeDir)bin\%(Filename)_RSZPass.h;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(RelativeDir)bin\%(Filename)_VSMain.h;%(RelativeDir)bin\%(Filename)_PSForward.h;%(RelativeDir)bin\%(Filename)_RSForward.h;%(RelativeDir)bin\%(Filename)_PSDeffered.h;%(RelativeDir)bin\%(Filename)_RSDeffered.h;%(RelativeDir)bin\%(Filename)_VSZPass.h;%(RelativeDir)bin\%(Filename)_RSZPass.h;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">mkdir %(RelativeDir)bin &gt; NUL 2&gt;&amp;1
+SET COMMON_FXC_OPT=/nologo /Ges /Gis /DHLSL=1
+fxc /T vs_5_1 /E VSMain /Fh%(RelativeDir)bin\%(Filename)_VSMain.h %COMMON_FXC_OPT% %(Identity)
+fxc /T ps_5_1 /E PSForward /Fh%(RelativeDir)bin\%(Filename)_PSForward.h %COMMON_FXC_OPT% %(Identity)
+fxc /T rootsig_1_1 /E RSForward /Fh%(RelativeDir)bin\%(Filename)_RSForward.h %COMMON_FXC_OPT% %(Identity)
+fxc /T ps_5_1 /E PSDeffered /Fh%(RelativeDir)bin\%(Filename)_PSDeffered.h %COMMON_FXC_OPT% %(Identity)
+fxc /T rootsig_1_1 /E RSDeffered /Fh%(RelativeDir)bin\%(Filename)_RSDeffered.h %COMMON_FXC_OPT% %(Identity)
+fxc /T rootsig_1_1 /E RSZPass /Fh%(RelativeDir)bin\%(Filename)_RSZPass.h %COMMON_FXC_OPT% %(Identity)
+fxc /T vs_5_1 /E VSZPass /Fh%(RelativeDir)bin\%(Filename)_VSZPass.h %COMMON_FXC_OPT% %(Identity)
+</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">mkdir %(RelativeDir)bin &gt; NUL 2&gt;&amp;1
+SET COMMON_FXC_OPT=/nologo /Ges /Gis /DHLSL=1
+fxc /T vs_5_1 /E VSMain /Fh%(RelativeDir)bin\%(Filename)_VSMain.h %COMMON_FXC_OPT% %(Identity)
+fxc /T ps_5_1 /E PSForward /Fh%(RelativeDir)bin\%(Filename)_PSForward.h %COMMON_FXC_OPT% %(Identity)
+fxc /T rootsig_1_1 /E RSForward /Fh%(RelativeDir)bin\%(Filename)_RSForward.h %COMMON_FXC_OPT% %(Identity)
+fxc /T ps_5_1 /E PSDeffered /Fh%(RelativeDir)bin\%(Filename)_PSDeffered.h %COMMON_FXC_OPT% %(Identity)
+fxc /T rootsig_1_1 /E RSDeffered /Fh%(RelativeDir)bin\%(Filename)_RSDeffered.h %COMMON_FXC_OPT% %(Identity)
+fxc /T rootsig_1_1 /E RSZPass /Fh%(RelativeDir)bin\%(Filename)_RSZPass.h %COMMON_FXC_OPT% %(Identity)
+fxc /T vs_5_1 /E VSZPass /Fh%(RelativeDir)bin\%(Filename)_VSZPass.h %COMMON_FXC_OPT% %(Identity)
+</Command>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="graphics\dx12\utility\Mesh\Shader\PTNVertex\PTNVertexPipeline.hlsl">
+      <FileType>Document</FileType>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(RelativeDir)..\..\..\HLSL\MacroDefine.hlsli;%(RelativeDir)..\..\..\HLSL\RootSignatureCommon.hlsli;%(RelativeDir)..\..\..\HLSL\Utility.hlsli;%(RelativeDir)..\..\..\HLSL\StructureCommon.hlsli;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(RelativeDir)..\..\..\HLSL\MacroDefine.hlsli;%(RelativeDir)..\..\..\HLSL\RootSignatureCommon.hlsli;%(RelativeDir)..\..\..\HLSL\Utility.hlsli;%(RelativeDir)..\..\..\HLSL\StructureCommon.hlsli;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(RelativeDir)..\..\..\HLSL\MacroDefine.hlsli;%(RelativeDir)..\..\..\HLSL\RootSignatureCommon.hlsli;%(RelativeDir)..\..\..\HLSL\Utility.hlsli;%(RelativeDir)..\..\..\HLSL\StructureCommon.hlsli;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(RelativeDir)..\..\..\HLSL\MacroDefine.hlsli;%(RelativeDir)..\..\..\HLSL\RootSignatureCommon.hlsli;%(RelativeDir)..\..\..\HLSL\Utility.hlsli;%(RelativeDir)..\..\..\HLSL\StructureCommon.hlsli;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(RelativeDir)bin\%(Filename)_VSMain_debug.h;%(RelativeDir)bin\%(Filename)_PSForward_debug.h;%(RelativeDir)bin\%(Filename)_RSForward_debug.h;%(RelativeDir)bin\%(Filename)_PSDeffered_debug.h;%(RelativeDir)bin\%(Filename)_RSDeffered_debug.h;%(RelativeDir)bin\%(Filename)_VSZPass_debug.h;%(RelativeDir)bin\%(Filename)_RSZPass_debug.h;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(RelativeDir)bin\%(Filename)_VSMain_debug.h;%(RelativeDir)bin\%(Filename)_PSForward_debug.h;%(RelativeDir)bin\%(Filename)_RSForward_debug.h;%(RelativeDir)bin\%(Filename)_PSDeffered_debug.h;%(RelativeDir)bin\%(Filename)_RSDeffered_debug.h;%(RelativeDir)bin\%(Filename)_VSZPass_debug.h;%(RelativeDir)bin\%(Filename)_RSZPass_debug.h;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">mkdir %(RelativeDir)bin &gt; NUL 2&gt;&amp;1
+SET COMMON_FXC_OPT=/Od /nologo /Ges /Gis /DHLSL=1
+fxc /T vs_5_1 /E VSMain /Fh%(RelativeDir)bin\%(Filename)_VSMain_debug.h %COMMON_FXC_OPT% %(Identity)
+fxc /T ps_5_1 /E PSForward /Fh%(RelativeDir)bin\%(Filename)_PSForward_debug.h %COMMON_FXC_OPT% %(Identity)
+fxc /T rootsig_1_1 /E RSForward /Fh%(RelativeDir)bin\%(Filename)_RSForward_debug.h %COMMON_FXC_OPT% %(Identity)
+fxc /T ps_5_1 /E PSDeffered /Fh%(RelativeDir)bin\%(Filename)_PSDeffered_debug.h %COMMON_FXC_OPT% %(Identity)
+fxc /T rootsig_1_1 /E RSDeffered /Fh%(RelativeDir)bin\%(Filename)_RSDeffered_debug.h %COMMON_FXC_OPT% %(Identity)
+fxc /T vs_5_1 /E VSZPass /Fh%(RelativeDir)bin\%(Filename)_VSZPass_debug.h %COMMON_FXC_OPT% %(Identity)
+fxc /T rootsig_1_1 /E RSZPass /Fh%(RelativeDir)bin\%(Filename)_RSZPass_debug.h %COMMON_FXC_OPT% %(Identity)
+</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">mkdir %(RelativeDir)bin &gt; NUL 2&gt;&amp;1
+SET COMMON_FXC_OPT=/Od /nologo /Ges /Gis /DHLSL=1
+fxc /T vs_5_1 /E VSMain /Fh%(RelativeDir)bin\%(Filename)_VSMain_debug.h %COMMON_FXC_OPT% %(Identity)
+fxc /T ps_5_1 /E PSForward /Fh%(RelativeDir)bin\%(Filename)_PSForward_debug.h %COMMON_FXC_OPT% %(Identity)
+fxc /T rootsig_1_1 /E RSForward /Fh%(RelativeDir)bin\%(Filename)_RSForward_debug.h %COMMON_FXC_OPT% %(Identity)
+fxc /T ps_5_1 /E PSDeffered /Fh%(RelativeDir)bin\%(Filename)_PSDeffered_debug.h %COMMON_FXC_OPT% %(Identity)
+fxc /T rootsig_1_1 /E RSDeffered /Fh%(RelativeDir)bin\%(Filename)_RSDeffered_debug.h %COMMON_FXC_OPT% %(Identity)
+fxc /T vs_5_1 /E VSZPass /Fh%(RelativeDir)bin\%(Filename)_VSZPass_debug.h %COMMON_FXC_OPT% %(Identity)
+fxc /T rootsig_1_1 /E RSZPass /Fh%(RelativeDir)bin\%(Filename)_RSZPass_debug.h %COMMON_FXC_OPT% %(Identity)
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(RelativeDir)bin\%(Filename)_VSMain.h;%(RelativeDir)bin\%(Filename)_PSForward.h;%(RelativeDir)bin\%(Filename)_RSForward.h;%(RelativeDir)bin\%(Filename)_PSDeffered.h;%(RelativeDir)bin\%(Filename)_RSDeffered.h;%(RelativeDir)bin\%(Filename)_VSZPass.h;%(RelativeDir)bin\%(Filename)_RSZPass.h;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(RelativeDir)bin\%(Filename)_VSMain.h;%(RelativeDir)bin\%(Filename)_PSForward.h;%(RelativeDir)bin\%(Filename)_RSForward.h;%(RelativeDir)bin\%(Filename)_PSDeffered.h;%(RelativeDir)bin\%(Filename)_RSDeffered.h;%(RelativeDir)bin\%(Filename)_VSZPass.h;%(RelativeDir)bin\%(Filename)_RSZPass.h;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">mkdir %(RelativeDir)bin &gt; NUL 2&gt;&amp;1
+SET COMMON_FXC_OPT=/nologo /Ges /Gis /DHLSL=1
+fxc /T vs_5_1 /E VSMain /Fh%(RelativeDir)bin\%(Filename)_VSMain.h %COMMON_FXC_OPT% %(Identity)
+fxc /T ps_5_1 /E PSForward /Fh%(RelativeDir)bin\%(Filename)_PSForward.h %COMMON_FXC_OPT% %(Identity)
+fxc /T rootsig_1_1 /E RSForward /Fh%(RelativeDir)bin\%(Filename)_RSForward.h %COMMON_FXC_OPT% %(Identity)
+fxc /T ps_5_1 /E PSDeffered /Fh%(RelativeDir)bin\%(Filename)_PSDeffered.h %COMMON_FXC_OPT% %(Identity)
+fxc /T rootsig_1_1 /E RSDeffered /Fh%(RelativeDir)bin\%(Filename)_RSDeffered.h %COMMON_FXC_OPT% %(Identity)
+fxc /T vs_5_1 /E VSZPass /Fh%(RelativeDir)bin\%(Filename)_VSZPass.h %COMMON_FXC_OPT% %(Identity)
+fxc /T rootsig_1_1 /E RSZPass /Fh%(RelativeDir)bin\%(Filename)_RSZPass.h %COMMON_FXC_OPT% %(Identity)
+</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">mkdir %(RelativeDir)bin &gt; NUL 2&gt;&amp;1
+SET COMMON_FXC_OPT=/nologo /Ges /Gis /DHLSL=1
+fxc /T vs_5_1 /E VSMain /Fh%(RelativeDir)bin\%(Filename)_VSMain.h %COMMON_FXC_OPT% %(Identity)
+fxc /T ps_5_1 /E PSForward /Fh%(RelativeDir)bin\%(Filename)_PSForward.h %COMMON_FXC_OPT% %(Identity)
+fxc /T rootsig_1_1 /E RSForward /Fh%(RelativeDir)bin\%(Filename)_RSForward.h %COMMON_FXC_OPT% %(Identity)
+fxc /T ps_5_1 /E PSDeffered /Fh%(RelativeDir)bin\%(Filename)_PSDeffered.h %COMMON_FXC_OPT% %(Identity)
+fxc /T rootsig_1_1 /E RSDeffered /Fh%(RelativeDir)bin\%(Filename)_RSDeffered.h %COMMON_FXC_OPT% %(Identity)
+fxc /T vs_5_1 /E VSZPass /Fh%(RelativeDir)bin\%(Filename)_VSZPass.h %COMMON_FXC_OPT% %(Identity)
+fxc /T rootsig_1_1 /E RSZPass /Fh%(RelativeDir)bin\%(Filename)_RSZPass.h %COMMON_FXC_OPT% %(Identity)
+</Command>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="graphics\dx12\utility\Mesh\Shader\PTNCVertex\PTNCVertexPipeline.hlsl">
+      <FileType>Document</FileType>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(RelativeDir)..\..\..\HLSL\MacroDefine.hlsli;%(RelativeDir)..\..\..\HLSL\RootSignatureCommon.hlsli;%(RelativeDir)..\..\..\HLSL\Utility.hlsli;%(RelativeDir)..\..\..\HLSL\StructureCommon.hlsli;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(RelativeDir)..\..\..\HLSL\MacroDefine.hlsli;%(RelativeDir)..\..\..\HLSL\RootSignatureCommon.hlsli;%(RelativeDir)..\..\..\HLSL\Utility.hlsli;%(RelativeDir)..\..\..\HLSL\StructureCommon.hlsli;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(RelativeDir)..\..\..\HLSL\MacroDefine.hlsli;%(RelativeDir)..\..\..\HLSL\RootSignatureCommon.hlsli;%(RelativeDir)..\..\..\HLSL\Utility.hlsli;%(RelativeDir)..\..\..\HLSL\StructureCommon.hlsli;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(RelativeDir)..\..\..\HLSL\MacroDefine.hlsli;%(RelativeDir)..\..\..\HLSL\RootSignatureCommon.hlsli;%(RelativeDir)..\..\..\HLSL\Utility.hlsli;%(RelativeDir)..\..\..\HLSL\StructureCommon.hlsli;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(RelativeDir)bin\%(Filename)_VSMain_debug.h;%(RelativeDir)bin\%(Filename)_PSForward_debug.h;%(RelativeDir)bin\%(Filename)_RSForward_debug.h;%(RelativeDir)bin\%(Filename)_PSDeffered_debug.h;%(RelativeDir)bin\%(Filename)_RSDeffered_debug.h;%(RelativeDir)bin\%(Filename)_VSZPass_debug.h;%(RelativeDir)bin\%(Filename)_RSZPass_debug.h;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(RelativeDir)bin\%(Filename)_VSMain_debug.h;%(RelativeDir)bin\%(Filename)_PSForward_debug.h;%(RelativeDir)bin\%(Filename)_RSForward_debug.h;%(RelativeDir)bin\%(Filename)_PSDeffered_debug.h;%(RelativeDir)bin\%(Filename)_RSDeffered_debug.h;%(RelativeDir)bin\%(Filename)_VSZPass_debug.h;%(RelativeDir)bin\%(Filename)_RSZPass_debug.h;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">mkdir %(RelativeDir)bin &gt; NUL 2&gt;&amp;1
+SET COMMON_FXC_OPT=/Od /nologo /Ges /Gis /DHLSL=1
+fxc /T vs_5_1 /E VSMain /Fh%(RelativeDir)bin\%(Filename)_VSMain_debug.h %COMMON_FXC_OPT% %(Identity)
+fxc /T ps_5_1 /E PSForward /Fh%(RelativeDir)bin\%(Filename)_PSForward_debug.h %COMMON_FXC_OPT% %(Identity)
+fxc /T rootsig_1_1 /E RSForward /Fh%(RelativeDir)bin\%(Filename)_RSForward_debug.h %COMMON_FXC_OPT% %(Identity)
+fxc /T ps_5_1 /E PSDeffered /Fh%(RelativeDir)bin\%(Filename)_PSDeffered_debug.h %COMMON_FXC_OPT% %(Identity)
+fxc /T rootsig_1_1 /E RSDeffered /Fh%(RelativeDir)bin\%(Filename)_RSDeffered_debug.h %COMMON_FXC_OPT% %(Identity)
+fxc /T vs_5_1 /E VSZPass /Fh%(RelativeDir)bin\%(Filename)_VSZPass_debug.h %COMMON_FXC_OPT% %(Identity)
+fxc /T rootsig_1_1 /E RSZPass /Fh%(RelativeDir)bin\%(Filename)_RSZPass_debug.h %COMMON_FXC_OPT% %(Identity)
+</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">mkdir %(RelativeDir)bin &gt; NUL 2&gt;&amp;1
+SET COMMON_FXC_OPT=/Od /nologo /Ges /Gis /DHLSL=1
+fxc /T vs_5_1 /E VSMain /Fh%(RelativeDir)bin\%(Filename)_VSMain_debug.h %COMMON_FXC_OPT% %(Identity)
+fxc /T ps_5_1 /E PSForward /Fh%(RelativeDir)bin\%(Filename)_PSForward_debug.h %COMMON_FXC_OPT% %(Identity)
+fxc /T rootsig_1_1 /E RSForward /Fh%(RelativeDir)bin\%(Filename)_RSForward_debug.h %COMMON_FXC_OPT% %(Identity)
+fxc /T ps_5_1 /E PSDeffered /Fh%(RelativeDir)bin\%(Filename)_PSDeffered_debug.h %COMMON_FXC_OPT% %(Identity)
+fxc /T rootsig_1_1 /E RSDeffered /Fh%(RelativeDir)bin\%(Filename)_RSDeffered_debug.h %COMMON_FXC_OPT% %(Identity)
+fxc /T vs_5_1 /E VSZPass /Fh%(RelativeDir)bin\%(Filename)_VSZPass_debug.h %COMMON_FXC_OPT% %(Identity)
+fxc /T rootsig_1_1 /E RSZPass /Fh%(RelativeDir)bin\%(Filename)_RSZPass_debug.h %COMMON_FXC_OPT% %(Identity)
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(RelativeDir)bin\%(Filename)_VSMain.h;%(RelativeDir)bin\%(Filename)_PSForward.h;%(RelativeDir)bin\%(Filename)_RSForward.h;%(RelativeDir)bin\%(Filename)_PSDeffered.h;%(RelativeDir)bin\%(Filename)_RSDeffered.h;%(RelativeDir)bin\%(Filename)_VSZPass.h;%(RelativeDir)bin\%(Filename)_RSZPass.h;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(RelativeDir)bin\%(Filename)_VSMain.h;%(RelativeDir)bin\%(Filename)_PSForward.h;%(RelativeDir)bin\%(Filename)_RSForward.h;%(RelativeDir)bin\%(Filename)_PSDeffered.h;%(RelativeDir)bin\%(Filename)_RSDeffered.h;%(RelativeDir)bin\%(Filename)_VSZPass.h;%(RelativeDir)bin\%(Filename)_RSZPass.h;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">mkdir %(RelativeDir)bin &gt; NUL 2&gt;&amp;1
+SET COMMON_FXC_OPT=/nologo /Ges /Gis /DHLSL=1
+fxc /T vs_5_1 /E VSMain /Fh%(RelativeDir)bin\%(Filename)_VSMain.h %COMMON_FXC_OPT% %(Identity)
+fxc /T ps_5_1 /E PSForward /Fh%(RelativeDir)bin\%(Filename)_PSForward.h %COMMON_FXC_OPT% %(Identity)
+fxc /T rootsig_1_1 /E RSForward /Fh%(RelativeDir)bin\%(Filename)_RSForward.h %COMMON_FXC_OPT% %(Identity)
+fxc /T ps_5_1 /E PSDeffered /Fh%(RelativeDir)bin\%(Filename)_PSDeffered.h %COMMON_FXC_OPT% %(Identity)
+fxc /T rootsig_1_1 /E RSDeffered /Fh%(RelativeDir)bin\%(Filename)_RSDeffered.h %COMMON_FXC_OPT% %(Identity)
+fxc /T vs_5_1 /E VSZPass /Fh%(RelativeDir)bin\%(Filename)_VSZPass.h %COMMON_FXC_OPT% %(Identity)
+fxc /T rootsig_1_1 /E RSZPass /Fh%(RelativeDir)bin\%(Filename)_RSZPass.h %COMMON_FXC_OPT% %(Identity)
+</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">mkdir %(RelativeDir)bin &gt; NUL 2&gt;&amp;1
+SET COMMON_FXC_OPT=/nologo /Ges /Gis /DHLSL=1
+fxc /T vs_5_1 /E VSMain /Fh%(RelativeDir)bin\%(Filename)_VSMain.h %COMMON_FXC_OPT% %(Identity)
+fxc /T ps_5_1 /E PSForward /Fh%(RelativeDir)bin\%(Filename)_PSForward.h %COMMON_FXC_OPT% %(Identity)
+fxc /T rootsig_1_1 /E RSForward /Fh%(RelativeDir)bin\%(Filename)_RSForward.h %COMMON_FXC_OPT% %(Identity)
+fxc /T ps_5_1 /E PSDeffered /Fh%(RelativeDir)bin\%(Filename)_PSDeffered.h %COMMON_FXC_OPT% %(Identity)
+fxc /T rootsig_1_1 /E RSDeffered /Fh%(RelativeDir)bin\%(Filename)_RSDeffered.h %COMMON_FXC_OPT% %(Identity)
+fxc /T vs_5_1 /E VSZPass /Fh%(RelativeDir)bin\%(Filename)_VSZPass.h %COMMON_FXC_OPT% %(Identity)
+fxc /T rootsig_1_1 /E RSZPass /Fh%(RelativeDir)bin\%(Filename)_RSZPass.h %COMMON_FXC_OPT% %(Identity)
+</Command>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="graphics\dx12\utility\GBuffer\Shader\DefferedLighting\CSDefferedDirectionLighting.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Compute</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">5.1</ShaderModel>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Compute</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">5.1</ShaderModel>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Compute</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">4.0</ShaderModel>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Compute</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Release|x64'">4.0</ShaderModel>
+      <FileType>Document</FileType>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(RelativeDir)..\..\..\HLSL\MacroDefine.hlsli;%(RelativeDir)..\..\..\HLSL\RootSignatureCommon.hlsli;%(RelativeDir)..\..\..\HLSL\Utility.hlsli;%(RelativeDir)..\..\..\HLSL\StructureCommon.hlsli;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(RelativeDir)..\..\..\HLSL\MacroDefine.hlsli;%(RelativeDir)..\..\..\HLSL\RootSignatureCommon.hlsli;%(RelativeDir)..\..\..\HLSL\Utility.hlsli;%(RelativeDir)..\..\..\HLSL\StructureCommon.hlsli;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(RelativeDir)bin\%(Filename)_debug.h;%(RelativeDir)bin\%(Filename)_RS_debug.h;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(RelativeDir)bin\%(Filename)_debug.h;%(RelativeDir)bin\%(Filename)_RS_debug.h;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">mkdir %(RelativeDir)bin &gt; NUL 2&gt;&amp;1
+SET COMMON_FXC_OPT=/Od /nologo /Ges /Gis /DHLSL=1
+fxc /T cs_5_1 /E main /Fh%(RelativeDir)bin\%(Filename)_debug.h %COMMON_FXC_OPT% %(Identity)
+fxc /T rootsig_1_1 /E RS /Fh%(RelativeDir)bin\%(Filename)_RS_debug.h %COMMON_FXC_OPT% %(Identity)</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">mkdir %(RelativeDir)bin &gt; NUL 2&gt;&amp;1
+SET COMMON_FXC_OPT=/Od /nologo /Ges /Gis /DHLSL=1
+fxc /T cs_5_1 /E main /Fh%(RelativeDir)bin\%(Filename)_debug.h %COMMON_FXC_OPT% %(Identity)
+fxc /T rootsig_1_1 /E RS /Fh%(RelativeDir)bin\%(Filename)_RS_debug.h %COMMON_FXC_OPT% %(Identity)</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(RelativeDir)bin\%(Filename).h;%(RelativeDir)bin\%(Filename)_RS.h;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(RelativeDir)bin\%(Filename).h;%(RelativeDir)bin\%(Filename)_RS.h;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">mkdir %(RelativeDir)bin &gt; NUL 2&gt;&amp;1
+SET COMMON_FXC_OPT=/Od /nologo /Ges /Gis /DHLSL=1
+fxc /T cs_5_1 /E main /Fh%(RelativeDir)bin\%(Filename).h %COMMON_FXC_OPT% %(Identity)
+fxc /T rootsig_1_1 /E RS /Fh%(RelativeDir)bin\%(Filename)_RS.h %COMMON_FXC_OPT% %(Identity)</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">mkdir %(RelativeDir)bin &gt; NUL 2&gt;&amp;1
+SET COMMON_FXC_OPT=/Od /nologo /Ges /Gis /DHLSL=1
+fxc /T cs_5_1 /E main /Fh%(RelativeDir)bin\%(Filename).h %COMMON_FXC_OPT% %(Identity)
+fxc /T rootsig_1_1 /E RS /Fh%(RelativeDir)bin\%(Filename)_RS.h %COMMON_FXC_OPT% %(Identity)</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(RelativeDir)..\..\..\HLSL\MacroDefine.hlsli;%(RelativeDir)..\..\..\HLSL\RootSignatureCommon.hlsli;%(RelativeDir)..\..\..\HLSL\Utility.hlsli;%(RelativeDir)..\..\..\HLSL\StructureCommon.hlsli;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(RelativeDir)..\..\..\HLSL\MacroDefine.hlsli;%(RelativeDir)..\..\..\HLSL\RootSignatureCommon.hlsli;%(RelativeDir)..\..\..\HLSL\Utility.hlsli;%(RelativeDir)..\..\..\HLSL\StructureCommon.hlsli;%(AdditionalInputs)</AdditionalInputs>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="graphics\dx12\utility\GBuffer\Shader\DefferedLighting\CSDefferedDirectionLightingWithShadow.hlsl">
+      <FileType>Document</FileType>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(RelativeDir)..\..\..\HLSL\MacroDefine.hlsli;%(RelativeDir)..\..\..\HLSL\RootSignatureCommon.hlsli;%(RelativeDir)..\..\..\HLSL\Utility.hlsli;%(RelativeDir)..\..\..\HLSL\StructureCommon.hlsli;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(RelativeDir)..\..\..\HLSL\MacroDefine.hlsli;%(RelativeDir)..\..\..\HLSL\RootSignatureCommon.hlsli;%(RelativeDir)..\..\..\HLSL\Utility.hlsli;%(RelativeDir)..\..\..\HLSL\StructureCommon.hlsli;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(RelativeDir)bin\%(Filename)_debug.h;%(RelativeDir)bin\%(Filename)_RS_debug.h;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(RelativeDir)bin\%(Filename)_debug.h;%(RelativeDir)bin\%(Filename)_RS_debug.h;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">mkdir %(RelativeDir)bin &gt; NUL 2&gt;&amp;1
+SET COMMON_FXC_OPT=/Od /nologo /Ges /Gis /DHLSL=1
+fxc /T cs_5_1 /E main /Fh%(RelativeDir)bin\%(Filename)_debug.h %COMMON_FXC_OPT% %(Identity)
+fxc /T rootsig_1_1 /E RS /Fh%(RelativeDir)bin\%(Filename)_RS_debug.h %COMMON_FXC_OPT% %(Identity)</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">mkdir %(RelativeDir)bin &gt; NUL 2&gt;&amp;1
+SET COMMON_FXC_OPT=/Od /nologo /Ges /Gis /DHLSL=1
+fxc /T cs_5_1 /E main /Fh%(RelativeDir)bin\%(Filename)_debug.h %COMMON_FXC_OPT% %(Identity)
+fxc /T rootsig_1_1 /E RS /Fh%(RelativeDir)bin\%(Filename)_RS_debug.h %COMMON_FXC_OPT% %(Identity)</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">mkdir %(RelativeDir)bin &gt; NUL 2&gt;&amp;1
+SET COMMON_FXC_OPT=/Od /nologo /Ges /Gis /DHLSL=1
+fxc /T cs_5_1 /E main /Fh%(RelativeDir)bin\%(Filename).h %COMMON_FXC_OPT% %(Identity)
+fxc /T rootsig_1_1 /E RS /Fh%(RelativeDir)bin\%(Filename)_RS.h %COMMON_FXC_OPT% %(Identity)</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">mkdir %(RelativeDir)bin &gt; NUL 2&gt;&amp;1
+SET COMMON_FXC_OPT=/Od /nologo /Ges /Gis /DHLSL=1
+fxc /T cs_5_1 /E main /Fh%(RelativeDir)bin\%(Filename).h %COMMON_FXC_OPT% %(Identity)
+fxc /T rootsig_1_1 /E RS /Fh%(RelativeDir)bin\%(Filename)_RS.h %COMMON_FXC_OPT% %(Identity)</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(RelativeDir)bin\%(Filename).h;%(RelativeDir)bin\%(Filename)_RS.h;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(RelativeDir)bin\%(Filename).h;%(RelativeDir)bin\%(Filename)_RS.h;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(RelativeDir)..\..\..\HLSL\MacroDefine.hlsli;%(RelativeDir)..\..\..\HLSL\RootSignatureCommon.hlsli;%(RelativeDir)..\..\..\HLSL\Utility.hlsli;%(RelativeDir)..\..\..\HLSL\StructureCommon.hlsli;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(RelativeDir)..\..\..\HLSL\MacroDefine.hlsli;%(RelativeDir)..\..\..\HLSL\RootSignatureCommon.hlsli;%(RelativeDir)..\..\..\HLSL\Utility.hlsli;%(RelativeDir)..\..\..\HLSL\StructureCommon.hlsli;%(AdditionalInputs)</AdditionalInputs>
+    </CustomBuild>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

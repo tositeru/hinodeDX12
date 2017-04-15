@@ -1,0 +1,363 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="ソース ファイル">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="ヘッダー ファイル">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="リソース ファイル">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\dx12\commandAllocator\DX12CommandAllocator.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\dx12\commandQueue\DX12CommandQueue.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\dx12\common\Common.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\dx12\common\Exception.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\dx12\common\Log.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\dx12\common\MacroUtility.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\dx12\common\MetaProgramingUtility.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\dx12\common\Pimpl.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\dx12\common\TypeDefine.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\dx12\descriptorHeap\DX12DescriptorHeap.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\dx12\device\DX12Device.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\dx12\fence\DX12Fence.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\dx12\graphicsCommandList\DX12GraphicsCommandList.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\dx12\heap\DX12Heap.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\dx12\pipelineState\DX12PipelineState.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\dx12\resource\DX12Resource.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\dx12\rootSignature\DX12RootSignature.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\dx12\swapChain\DX12SwapChain.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\dx12\utility\math\SimpleGeometry.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\dx12\utility\math\SimpleMath.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\dx12\utility\Mesh\MeshPipeline\MeshPipeline.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\dx12\utility\Mesh\Mesh.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\dx12\utility\Mesh\MeshVertexFormat.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\dx12\utility\ResourceUploader\ResourceUploader.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\dx12\utility\Shader\Includer\Includer.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\dx12\utility\Shader\Pipeline\Pipeline.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\dx12\utility\Shader\PipelineResourceBinder\PipelineResourceBinder.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\dx12\utility\Shader\PipelineSet\PipelineSet.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\dx12\utility\Shader\RootSignatureInfo\RootSignatureInfo.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\dx12\utility\Shader\ShaderResourceInfo\ShaderResourceInfo.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\dx12\utility\Shader\Shader.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\dx12\utility\DX12Utility.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\dx12\d3dx12.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\dx12\IDX12Interface.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\dx12\DirectXTex\WICTextureLoader\WICTextureLoader12.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\dx12\DirectXTex\DDSTextureLoader\DDSTextureLoader12.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\dx12\utility\winapi\CheckMemoryLeak.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\dx12\utility\winapi\KeyObserver.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\dx12\utility\winapi\Window.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\dx12\utility\Camera\PreviewCamera\PreviewCamera.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\dx12\utility\Mesh\Primitive\Plane\Plane.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\dx12\utility\Mesh\Primitive\Tetrahedron\Tetrahedron.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\dx12\sampler\DX12Sampler.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\dx12\utility\RingBuffer\ConstantBufferPool\ConstantBufferPool.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\dx12\utility\RingBuffer\RingBuffer.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\dx12\utility\RingBuffer\DescriptorHeapPool\DescriptorHeapPool.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\dx12\utility\FrameDataManager\FrameDataManager.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\dx12\utility\Context\Context.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\dx12\utility\Mesh\Shader\PCVertex\bin\PCVertexPipeline_PSForward_debug.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\dx12\utility\Mesh\Shader\PCVertex\bin\PCVertexPipeline_RSForward_debug.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\dx12\utility\Mesh\Shader\PCVertex\bin\PCVertexPipeline_VSMain_debug.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\dx12\utility\Mesh\Shader\PVertex\bin\PVertexPipeline_PSForward.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\dx12\utility\Mesh\Shader\PVertex\bin\PVertexPipeline_PSForward_debug.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\dx12\utility\Mesh\Shader\PVertex\bin\PVertexPipeline_RSForward.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\dx12\utility\Mesh\Shader\PVertex\bin\PVertexPipeline_RSForward_debug.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\dx12\utility\Mesh\Shader\PVertex\bin\PVertexPipeline_VSMain.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\dx12\utility\Mesh\Shader\PVertex\bin\PVertexPipeline_VSMain_debug.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\dx12\utility\GBuffer\GBufferManager.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\dx12\utility\GBuffer\DefferedLightingPipeline\DefferedLightingPipeline.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\dx12\utility\GBuffer\DefferedLightingManager\DefferedLightingManager.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\dx12\utility\ShadowMap\ShadowMapManager.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="graphics\dx12\commandAllocator\DX12CommandAllocator.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="graphics\dx12\commandQueue\DX12CommandQueue.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="graphics\dx12\common\Exception.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="graphics\dx12\common\Log.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="graphics\dx12\descriptorHeap\DX12DescriptorHeap.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="graphics\dx12\device\DX12Device.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="graphics\dx12\fence\DX12Fence.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="graphics\dx12\graphicsCommandList\DX12GraphicsCommandList.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="graphics\dx12\heap\DX12Heap.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="graphics\dx12\pipelineState\DX12PipelineState.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="graphics\dx12\resource\DX12Resource.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="graphics\dx12\rootSignature\DX12RootSignature.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="graphics\dx12\swapChain\DX12SwapChain.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="graphics\dx12\utility\Mesh\MeshPipeline\MeshPipeline.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="graphics\dx12\utility\Mesh\Mesh.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="graphics\dx12\utility\ResourceUploader\ResourceUploader.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="graphics\dx12\utility\Shader\Includer\Includer.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="graphics\dx12\utility\Shader\Pipeline\Pipeline.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="graphics\dx12\utility\Shader\PipelineResourceBinder\PipelineResourceBinder.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="graphics\dx12\utility\Shader\PipelineSet\PipelineSet.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="graphics\dx12\utility\Shader\RootSignatureInfo\RootSignatureInfo.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="graphics\dx12\utility\Shader\ShaderResourceInfo\ShaderResourceInfo.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="graphics\dx12\utility\Shader\Shader.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="graphics\dx12\utility\DX12Utility.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="graphics\dx12\DirectXTex\WICTextureLoader\WICTextureLoader12.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="graphics\dx12\DirectXTex\DDSTextureLoader\DDSTextureLoader12.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="graphics\dx12\utility\winapi\CheckMemoryLeak.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="graphics\dx12\utility\winapi\Window.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="graphics\dx12\utility\Camera\PreviewCamera\PreviewCamera.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="graphics\dx12\utility\Mesh\Primitive\Tetrahedron\Tetrahedron.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="graphics\dx12\utility\Mesh\Primitive\Plane\Plane.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="graphics\dx12\sampler\DX12Sampler.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="graphics\dx12\utility\RingBuffer\ConstantBufferPool\ConstantBufferPool.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="graphics\dx12\utility\RingBuffer\RingBuffer.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="graphics\dx12\utility\RingBuffer\DescriptorHeapPool\DescriptorHeapPool.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="graphics\dx12\utility\FrameDataManager\FrameDataManager.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="graphics\dx12\utility\Context\Context.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="graphics\dx12\utility\GBuffer\GBufferManager.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="graphics\dx12\utility\GBuffer\DefferedLightingPipeline\DefferedLightingPipeline.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="graphics\dx12\utility\GBuffer\DefferedLightingManager\DefferedLightingManager.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="graphics\dx12\utility\ShadowMap\ShadowMapManager.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Natvis Include="NatvisFile.natvis" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="graphics\dx12\utility\HLSL\MacroDefine.hlsli" />
+    <None Include="graphics\dx12\utility\HLSL\RootSignatureCommon.hlsli" />
+    <None Include="graphics\dx12\utility\HLSL\StructureCommon.hlsli" />
+    <None Include="graphics\dx12\utility\HLSL\Utility.hlsli" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="graphics\dx12\utility\Shader\Includer\MakeShaderSystemRootDirHeader.bat">
+      <Filter>ソース ファイル</Filter>
+    </CustomBuild>
+    <CustomBuild Include="graphics\dx12\utility\Mesh\Shader\PTVertex\PTVertexPipeline.hlsl" />
+    <CustomBuild Include="graphics\dx12\utility\Mesh\Shader\PVertex\PVertexPipeline.hlsl" />
+    <CustomBuild Include="graphics\dx12\utility\Mesh\Shader\PCVertex\PCVertexPipeline.hlsl" />
+    <CustomBuild Include="graphics\dx12\utility\Mesh\Shader\PNVertex\PNVertexPipeline.hlsl" />
+    <CustomBuild Include="graphics\dx12\utility\Mesh\Shader\PTNVertex\PTNVertexPipeline.hlsl" />
+    <CustomBuild Include="graphics\dx12\utility\Mesh\Shader\PTNCVertex\PTNCVertexPipeline.hlsl" />
+    <CustomBuild Include="graphics\dx12\utility\GBuffer\Shader\DefferedLighting\CSDefferedDirectionLighting.hlsl" />
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="graphics\dx12\utility\GBuffer\Shader\DefferedLighting\CSDefferedDirectionLightingWithShadow.hlsl" />
+  </ItemGroup>
+</Project>

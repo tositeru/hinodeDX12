@@ -1,0 +1,55 @@
+{"objects": [
+    { "name": "1",
+      "orientation": {
+        "pos": [0, 0, 0],
+        "rot": [0, 0, 0, 1],
+        "scl": [1, 1, 1]
+      },
+      "model": "tetra_PTNC",
+      "render_phase": {
+        "forward": "PTNC",
+        "deffered": "",
+        "zpass": ""
+      }
+    }
+  ],
+  "models": [
+    { "name": "tetra_PTNC",
+      "system": {
+        "prm": "tetra",
+        "vertex": "PTNC",
+        "mtl": {
+          "dif": [1,1,1],
+          "alp": 1,
+          "spc": [1, 1, 1],
+          "pow": 10,
+          "dif_tex": "data/panda.png"
+        }
+      }
+    }
+  ],
+  "pipelines": [
+    { "name": "PTNC",
+      "system": {
+        "type": "Forward",
+        "vertex": "PTNC"
+      }
+    }
+  ],
+  "render_phase": [
+    {
+      "forward": {
+        "priority": 0,
+        "rt": "backbuffer"
+      },
+      "deffered": {
+        "priority": -1,
+        "rt": "gbuffer"
+      },
+      "zpass": {
+        "priority": -1,
+        "rt": "shadowmap"
+      }
+    }
+  ]
+}
