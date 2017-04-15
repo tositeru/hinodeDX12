@@ -1,0 +1,14 @@
+x64
+/hinodeDx12.VC.VC.opendb
+/hinodeDx12.VC.db
+/dx12/SunriseShaderSystemHeaderDir.txt
+/dx12/HinodeShaderSystemHeaderDir.txt
+/dx12/graphics/dx12/utility/Mesh/Shader/PCVertex/bin
+/dx12/graphics/dx12/utility/Mesh/Shader/PNVertex/bin
+/dx12/graphics/dx12/utility/Mesh/Shader/PTNCVertex/bin
+/dx12/graphics/dx12/utility/Mesh/Shader/PTNVertex/bin
+/dx12/graphics/dx12/utility/Mesh/Shader/PTVertex/bin
+/dx12/graphics/dx12/utility/Mesh/Shader/PVertex/bin
+/dx12/graphics/dx12/utility/GBuffer/Shader/DefferedLighting/bin
+/dx12/graphics/dx12/utility/Shader/Includer/ShaderSystemRootPath.h
+/dx12Test/hinodeGraphicsLog.txt

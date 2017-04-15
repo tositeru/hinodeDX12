@@ -248,9 +248,6 @@
     <ClCompile Include="graphics\dx12\utility\winapi\Window.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <Natvis Include="NatvisFile.natvis" />
-  </ItemGroup>
-  <ItemGroup>
     <CustomBuild Include="graphics\dx12\utility\Shader\Includer\MakeShaderSystemRootDirHeader.bat">
       <FileType>Document</FileType>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(RelativeDir)ShaderSystemRootPath.h</Outputs>

@@ -337,9 +337,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <Natvis Include="NatvisFile.natvis" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="graphics\dx12\utility\HLSL\MacroDefine.hlsli" />
     <None Include="graphics\dx12\utility\HLSL\RootSignatureCommon.hlsli" />
     <None Include="graphics\dx12\utility\HLSL\StructureCommon.hlsli" />
@@ -356,8 +353,6 @@
     <CustomBuild Include="graphics\dx12\utility\Mesh\Shader\PTNVertex\PTNVertexPipeline.hlsl" />
     <CustomBuild Include="graphics\dx12\utility\Mesh\Shader\PTNCVertex\PTNCVertexPipeline.hlsl" />
     <CustomBuild Include="graphics\dx12\utility\GBuffer\Shader\DefferedLighting\CSDefferedDirectionLighting.hlsl" />
-  </ItemGroup>
-  <ItemGroup>
-    <FxCompile Include="graphics\dx12\utility\GBuffer\Shader\DefferedLighting\CSDefferedDirectionLightingWithShadow.hlsl" />
+    <CustomBuild Include="graphics\dx12\utility\GBuffer\Shader\DefferedLighting\CSDefferedDirectionLightingWithShadow.hlsl" />
   </ItemGroup>
 </Project>
