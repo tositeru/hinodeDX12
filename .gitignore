@@ -12,3 +12,6 @@ x64
 /dx12/graphics/dx12/utility/GBuffer/Shader/DefferedLighting/bin
 /dx12/graphics/dx12/utility/Shader/Includer/ShaderSystemRootPath.h
 /dx12Test/hinodeGraphicsLog.txt
+/.vs
+/Debug
+/ipch
