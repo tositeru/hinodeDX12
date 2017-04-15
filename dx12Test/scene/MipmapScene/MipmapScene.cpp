@@ -2,7 +2,6 @@
 
 #include "MipmapScene.h"
 
-#include <DirectXTex\WICTextureLoader\WICTextureLoader12.h>
 #include <graphics\dx12\utility\winapi\KeyObserver.h>
 
 MipmapScene::MipmapScene()

@@ -1,7 +1,7 @@
 #pragma once
 
 #pragma warning(disable: 4503)
-#define ASIO_STANDALONE
+//#define ASIO_STANDALONE // <ー プロジェクト設定で定義してます
 #define _WEBSOCKETPP_CPP11_STL_
 
 //Windows.hの後にインクルードするとエラーが出るので、前もってインクルードしている。
