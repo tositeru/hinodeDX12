@@ -59,7 +59,7 @@ void DXWindow::create(const InitParam& initParam)
 	std::cout << "0キーを押すとキー操作をコマンドプロンプトに表示します" << std::endl;
 
 	this->mIsCloseThread = false;
-	this->mThread = std::thread(std::bind(&DXWindow::serverThread, this));
+	//this->mThread = std::thread(std::bind(&DXWindow::serverThread, this));
 
 	this->show();
 }
