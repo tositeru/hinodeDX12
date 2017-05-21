@@ -38,26 +38,26 @@ namespace hinode
 				}
 			}
 
-			void FrameDataManager::endAndGoNextFrame(ID3D12CommandQueue* pCmdList)
+			void FrameDataManager::endAndGoNextFrame(ID3D12CommandQueue* pCmdQueue)
 			{
-				auto currentIndex = this->currentFrameIndex();
+				auto currentIndex = static_cast<size_t>(this->currentFrameIndex());
 				auto& frame = this->mFrames[currentIndex];
 
 				++this->mCurrentFrame;
 				frame.mFrame = this->mCurrentFrame;
-				pCmdList->Signal(this->mFence, this->mCurrentFrame);
+				pCmdQueue->Signal(this->mFence, this->mCurrentFrame);
 			}
 
-			void FrameDataManager::wait(DWORD waitMilliseconds)
+			void FrameDataManager::waitForCurrent(DWORD waitMilliseconds)
 			{
-				auto currentIndex = this->currentFrameIndex();
+				auto currentIndex = static_cast<size_t>(this->currentFrameIndex());
 				auto& frame = this->mFrames[currentIndex];
 				this->mFence.wait(frame.mFrame, waitMilliseconds);
 			}
 
 			void FrameDataManager::waitPrevFrame(DWORD waitMilliseconds)
 			{
-				auto f = (std::max(1uLL, this->mCurrentFrame) - 1) % this->mFrames.size();
+				auto f = static_cast<size_t>((std::max(1uLL, this->mCurrentFrame) - 1) % this->mFrames.size());
 				auto& frame = this->mFrames[f];
 				this->mFence.wait(frame.mFrame, waitMilliseconds);
 			}
@@ -69,7 +69,7 @@ namespace hinode
 
 			FrameDataManager::IData* FrameDataManager::currentFrame()noexcept
 			{
-				auto index = this->currentFrameIndex();
+				auto index = static_cast<size_t>(this->currentFrameIndex());
 				return this->mFrames[index].mpData.get();
 			}
 

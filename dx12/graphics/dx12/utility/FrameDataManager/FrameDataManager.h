@@ -31,8 +31,8 @@ namespace hinode
 				virtual void clear();
 				void create(ID3D12Device* pDevice, size_t frameCount, std::function<std::unique_ptr<IData>(UINT frameIndex)> make);
 
-				void endAndGoNextFrame(ID3D12CommandQueue* pCmdList);
-				void wait(DWORD waitMilliseconds = INFINITE);
+				void endAndGoNextFrame(ID3D12CommandQueue* pCmdQueue);
+				void waitForCurrent(DWORD waitMilliseconds = INFINITE);
 				void waitPrevFrame(DWORD waitMilliseconds = INFINITE);
 
 			accessor_declaration:
@@ -42,7 +42,7 @@ namespace hinode
 				template<typename T>
 				T* currentFrame()noexcept
 				{
-					auto index = this->currentFrameIndex();
+					auto index = static_cast<size_t>(this->currentFrameIndex());
 					return dynamic_cast<T*>(this->mFrames[index].mpData.get());
 				}
 

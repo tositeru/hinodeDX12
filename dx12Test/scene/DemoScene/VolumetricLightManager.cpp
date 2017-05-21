@@ -122,7 +122,7 @@ void VolumetricLightingManager::create(ID3D12Device* pDevice, const InitParam& p
 
 			size_t particleCount = 10000;
 			this->mParticles.reserve(particleCount);
-			for (auto i = 0; i < particleCount; ++i) {
+			for (auto i = 0u; i < particleCount; ++i) {
 				buildScatteringAmount::ScatteringAmountParticle p;
 				math::float3 center(0, 0, 10.f);
 				p.pos = math::setRandom<math::float3>(-30.f, 30.f);

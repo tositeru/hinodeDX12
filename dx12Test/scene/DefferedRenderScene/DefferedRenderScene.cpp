@@ -222,7 +222,7 @@ bool DefferedRenderScene::paint(utility::Graphics& graphics, scene::SceneInfo& s
 				cbLights[0].color = { 1, 0, 0 };
 				cbLights[1].direction = math::normalize(math::float3(0, 0, -1));
 				cbLights[1].color = { 0, 0, 1 };
-				for (auto i = 0; i < hinode::graphics::arrayLength(cbLights); ++i) {
+				for (auto i = 0u; i < hinode::graphics::arrayLength(cbLights); ++i) {
 					utility::DefferedLightingManager::DirectionLightParam param;
 					param.lightParam = cbLights[i];
 					this->mDefferedLighting.lighting(cmdList, this->mDHPool, this->mCBPool, param);

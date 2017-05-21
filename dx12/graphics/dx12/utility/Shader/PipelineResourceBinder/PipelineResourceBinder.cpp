@@ -461,7 +461,7 @@ namespace hinode
 			void PipelineResourceBinder::DescriptorTable::setValidation(size_t offset, size_t count)
 			{
 				assert(offset + (count-1) < this->mIsSetValidations.size());
-				for (auto i = 0; i < count; ++i) {
+				for (auto i = 0u; i < count; ++i) {
 					this->mIsSetValidations[offset + i] = true;
 				}
 			}

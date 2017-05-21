@@ -94,7 +94,7 @@ namespace hinode
 					for (auto row = 0u; row < footprint.Height * footprint.Depth; ++row) {
 						start = &pDest[row*footprint.RowPitch];
 						destStart = &pSrcData[row*desc.rowPitch];
-						memcpy(start, destStart, desc.rowPitch);
+						memcpy(start, destStart, static_cast<size_t>(desc.rowPitch));
 					}
 					return true;
 				});
@@ -148,7 +148,7 @@ namespace hinode
 
 							auto start = &pDest[row*pf.Footprint.RowPitch];
 							auto destStart = &pSrcData[row*texDesc.rowPitch];
-							memcpy(start, destStart, texDesc.rowPitch);
+							memcpy(start, destStart, static_cast<size_t>(texDesc.rowPitch));
 						}
 						return true;
 					});

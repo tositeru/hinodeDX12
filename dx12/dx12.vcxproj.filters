@@ -207,6 +207,12 @@
     <ClInclude Include="graphics\dx12\utility\ShadowMap\ShadowMapManager.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
+    <ClInclude Include="graphics\dx12\utility\Camera\DrafterCamera\DrafterCamera.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\dx12\queryHeap\DX12QueryHeap.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -333,6 +339,12 @@
       <Filter>ソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="graphics\dx12\utility\ShadowMap\ShadowMapManager.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="graphics\dx12\utility\Camera\DrafterCamera\DrafterCamera.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="graphics\dx12\queryHeap\DX12QueryHeap.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
   </ItemGroup>

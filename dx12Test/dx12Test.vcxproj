@@ -653,6 +653,8 @@
     <ClInclude Include="external\websocketpp\version.hpp" />
     <ClInclude Include="network\DebugCommandServer.h" />
     <ClInclude Include="network\JPEncode.h" />
+    <ClInclude Include="scene\BetterDrawCallScene\BetterDrawCallScene.h" />
+    <ClInclude Include="scene\BetterDrawCallScene\ParticleManager\ParticleManager.h" />
     <ClInclude Include="scene\DefferedRenderScene\DefferedRenderScene.h" />
     <ClInclude Include="scene\DemoScene\VolumetricLightManager.h" />
     <ClInclude Include="scene\IScene.h" />
@@ -681,6 +683,8 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="DXWindow\DXWindow.cpp" />
     <ClCompile Include="network\DebugCommandServer.cpp" />
+    <ClCompile Include="scene\BetterDrawCallScene\BetterDrawCallScene.cpp" />
+    <ClCompile Include="scene\BetterDrawCallScene\ParticleManager\ParticleManager.cpp" />
     <ClCompile Include="scene\DefferedRenderScene\DefferedRenderScene.cpp" />
     <ClCompile Include="scene\DemoScene\VolumetricLightManager.cpp" />
     <ClCompile Include="scene\IScene.cpp" />

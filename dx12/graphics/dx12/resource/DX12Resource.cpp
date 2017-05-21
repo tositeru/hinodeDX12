@@ -545,7 +545,7 @@ namespace hinode
 			const View& view(int index)const
 			{
 				assert(this->isGood() && "まだ初期化されていません");
-				assert(index < this->mViews.size() && "指定されたインデックスのビューはありません。");
+				assert(static_cast<size_t>(index) < this->mViews.size() && "指定されたインデックスのビューはありません。");
 				return this->mViews[index];
 			}
 
@@ -910,8 +910,8 @@ namespace hinode
 		{ }
 
 		DX12ResourceHeapDesc::DX12ResourceHeapDesc(D3D12_HEAP_TYPE heapType, D3D12_HEAP_FLAGS heapFlags)
-			: properties(D3D12_HEAP_TYPE_DEFAULT)
-			, flags(D3D12_HEAP_FLAG_NONE)
+			: properties(heapType)
+			, flags(heapFlags)
 		{}
 	}
 

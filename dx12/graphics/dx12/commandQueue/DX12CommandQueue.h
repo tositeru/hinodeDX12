@@ -49,6 +49,7 @@ namespace hinode
 			ID3D12CommandQueue* queue()_noexcept;
 			operator ID3D12CommandQueue*()_noexcept { return this->queue(); }
 
+			UINT64 GPUTimestampFrequence()const noexcept;
 			double prevProcessingTime()const noexcept;
 		};
 	}

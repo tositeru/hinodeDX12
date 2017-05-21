@@ -38,8 +38,8 @@ namespace hinode
 						pDebugDeivce->ReportLiveDeviceObjects(D3D12_RLDO_DETAIL);
 					}
 #endif
-					this->mDevice.clear();
 				}
+				this->mDevice.clear();
 			}
 
 			void Graphics::init(DX12DeviceDesc* pDeviceDesc, const D3D12_COMMAND_QUEUE_DESC& cmdQueueDesc, DXGI_SWAP_CHAIN_DESC* pSwapChainDesc, bool isSwitchScreenMode)
@@ -128,7 +128,9 @@ namespace hinode
 				pCommandList->RSSetScissorRects(1, &this->getScissorRect());
 
 				auto frameIndex = this->currentBackBufferIndex();
-				pCommandList->ResourceBarrier(1, &this->currentRenderTarget().makeBarrier(D3D12_RESOURCE_STATE_RENDER_TARGET));
+				unless(D3D12_RESOURCE_STATE_RENDER_TARGET == this->currentRenderTarget().currentState()) {
+					pCommandList->ResourceBarrier(1, &this->currentRenderTarget().makeBarrier(D3D12_RESOURCE_STATE_RENDER_TARGET));
+				}
 
 				auto rtvHandle = this->currentRTView();
 				auto dsvHandle = this->currentDSView();
@@ -166,7 +168,7 @@ namespace hinode
 
 			void Graphics::waitForCurrentFrame(DWORD waitMilliseconds)
 			{
-				this->mFrameDatas.wait(waitMilliseconds);
+				this->mFrameDatas.waitForCurrent(waitMilliseconds);
 			}
 
 			void Graphics::waitPrevFrame(DWORD waitMilliseconds)

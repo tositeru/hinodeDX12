@@ -18,7 +18,7 @@ namespace hinode
 
 			void Context::clear()
 			{
-				this->mCmdList.clear();
+				this->mCmdLists.clear();
 				this->mCmdAllocator.clear();
 			}
 
@@ -28,14 +28,19 @@ namespace hinode
 
 				this->mCmdAllocator.create(pDevice, type);
 
-				DX12GraphicsCommandListDesc desc(nodeMask, type, this->mCmdAllocator, pPipeline);
-				this->mCmdList.create(pDevice, desc);
+				this->mCmdLists.create(pDevice, 2, [&](UINT frameIndex) {
+					auto result = std::make_unique<FrameData>();
+					DX12GraphicsCommandListDesc desc(nodeMask, type, this->mCmdAllocator, pPipeline);
+					result->mCmdList.create(pDevice, desc);
+					return result;
+				});
 			}
 
 			void Context::record(ID3D12PipelineState* pState, std::function<void(DX12GraphicsCommandList& cmdList)> pred)
 			{
 				this->resetAllocator();
-				this->mCmdList.record(this->mCmdAllocator, pState, pred);
+				auto pFrameData = dynamic_cast<FrameData*>(this->mCmdLists.currentFrame());
+				pFrameData->mCmdList.record(this->mCmdAllocator, pState, pred);
 			}
 
 			void Context::resetAllocator()
@@ -46,6 +51,49 @@ namespace hinode
 				}
 			}
 
+			bool Context::beginRecord(ID3D12PipelineState* pInitialState)noexcept
+			{
+				this->resetAllocator();
+				this->mCmdLists.waitForCurrent();
+				auto& cmdList = *this->currentCmdListPointer();
+				return cmdList.reset(this->mCmdAllocator, pInitialState);
+			}
+
+			bool Context::executeAndSwap(DX12CommandQueue& cmdQueue, ID3D12PipelineState* pInitialState)noexcept
+			{
+				{//実行する側のコマンドリスト
+					auto& cmdList = *this->currentCmdListPointer();
+					unless(cmdList.close()) {
+						return false;
+					}
+					cmdQueue.executeCommandLists({ cmdList });
+					this->mCmdLists.endAndGoNextFrame(cmdQueue);
+				}
+
+				{//次のコマンドリスト
+					this->mCmdLists.waitForCurrent();
+					auto& cmdList = *this->currentCmdListPointer();
+					return cmdList.reset(this->mCmdAllocator, pInitialState);
+				}
+			}
+
+			bool Context::endRecord(DX12CommandQueue& cmdQueue)noexcept
+			{
+				auto& cmdList = *this->currentCmdListPointer();
+				unless(cmdList.close()) {
+					return false;
+				}
+				cmdQueue.executeCommandLists({ cmdList });
+				this->mCmdLists.endAndGoNextFrame(cmdQueue);
+				return true;
+			}
+
+			DX12GraphicsCommandList* Context::currentCmdListPointer()noexcept
+			{
+				auto pFrameData = dynamic_cast<FrameData*>(this->mCmdLists.currentFrame());
+				return &pFrameData->mCmdList;
+			}
+
 			DX12CommandAllocator& Context::allocator()noexcept
 			{
 				return this->mCmdAllocator;
@@ -53,7 +101,8 @@ namespace hinode
 
 			DX12GraphicsCommandList& Context::cmdList()noexcept
 			{
-				return this->mCmdList;
+				auto pFrameData = dynamic_cast<FrameData*>(this->mCmdLists.currentFrame());
+				return pFrameData->mCmdList;
 			}
 
 		}

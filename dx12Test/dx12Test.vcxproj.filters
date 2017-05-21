@@ -1590,6 +1590,12 @@
     <ClInclude Include="external\websocketpp\version.hpp">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
+    <ClInclude Include="scene\BetterDrawCallScene\BetterDrawCallScene.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="scene\BetterDrawCallScene\ParticleManager\ParticleManager.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -1662,6 +1668,12 @@
       <Filter>ソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="external\json11\json11.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="scene\BetterDrawCallScene\ParticleManager\ParticleManager.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="scene\BetterDrawCallScene\BetterDrawCallScene.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
   </ItemGroup>

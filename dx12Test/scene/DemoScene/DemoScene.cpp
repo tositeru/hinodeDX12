@@ -83,7 +83,7 @@ bool DemoScene::paint(utility::Graphics& graphics, scene::SceneInfo& sceneInfo)
 	this->mCamera.update();
 
 	//描画オブジェクトの更新
-	for (auto i = 0; i < this->mDynamicObjCount; ++i) {
+	for (auto i = 0u; i < this->mDynamicObjCount; ++i) {
 		auto& obj = this->mObjects[i];
 		obj.rot += math::float3{0.001f, 0.02f, 0.002f};
 	}
@@ -91,7 +91,7 @@ bool DemoScene::paint(utility::Graphics& graphics, scene::SceneInfo& sceneInfo)
 		static float t = 0;
 		t += 0.01f;
 		auto first = this->mDynamicObjCount;
-		for (auto i = 0; i < this->mMoveObjCount; ++i) {
+		for (auto i = 0u; i < this->mMoveObjCount; ++i) {
 			auto& obj = this->mObjects[first + i];
 			obj.pos.z = sin(t + i) * 3.f;
 		}

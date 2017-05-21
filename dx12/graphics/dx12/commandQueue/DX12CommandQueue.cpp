@@ -97,6 +97,12 @@ namespace hinode
 				assert(nullptr != this->mpQueue || "まだ初期化されていません");
 				return this->mpQueue;
 			}
+
+			UINT64 GPUTimestampFrequence()const noexcept
+			{
+				assert(nullptr != this->mpQueue || "まだ初期化されていません");
+				return this->mGPUTimestampFrequence;
+			}
 		};
 
 		//===========================================================================
@@ -147,5 +153,9 @@ namespace hinode
 			return this->impl().queue();
 		}
 
+		UINT64 DX12CommandQueue::GPUTimestampFrequence()const noexcept
+		{
+			return this->impl().GPUTimestampFrequence();
+		}
 	}
 }

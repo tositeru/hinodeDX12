@@ -15,6 +15,7 @@
 #include "..\rootSignature\DX12RootSignature.h"
 #include "..\resource\DX12Resource.h"
 #include "..\sampler\DX12Sampler.h"
+#include "../queryHeap/DX12QueryHeap.h"
 
 #include "Context/Context.h"
 
@@ -41,6 +42,7 @@
 
 //カメラ関連
 #include "Camera\PreviewCamera\PreviewCamera.h"
+#include "Camera/DrafterCamera/DrafterCamera.h"
 
 namespace hinode
 {

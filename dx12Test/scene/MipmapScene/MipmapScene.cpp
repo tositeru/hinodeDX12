@@ -89,7 +89,7 @@ void MipmapScene::init(utility::Graphics& graphics, scene::SceneInfo& sceneInfo)
 					0xffff0080,
 					0xff8000ff,
 				} };
-			auto length = w * h;
+			auto length = static_cast<size_t>(w * h);
 			rawDatas[i].resize(length, colorTbl[std::min<size_t>(i, colorTbl.size()-1)]);
 
 			uploadDescs[i].pData = rawDatas[i].data();
